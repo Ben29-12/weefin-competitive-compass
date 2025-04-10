@@ -18,7 +18,7 @@ export function ActivitiesSection({ competitor }: ActivitiesSectionProps) {
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="all">
-          <TabsList className="mb-4">
+          <TabsList className="mb-4 inline-flex w-auto">
             <TabsTrigger value="all">All</TabsTrigger>
             {activityTypes.map(type => (
               <TabsTrigger key={type.value} value={type.value}>

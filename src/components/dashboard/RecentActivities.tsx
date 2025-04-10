@@ -41,7 +41,7 @@ export const RecentActivities = () => {
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="all">
-          <TabsList className="mb-4 w-full justify-start">
+          <TabsList className="mb-4 inline-flex w-auto">
             <TabsTrigger value="all">All</TabsTrigger>
             {activityTypes.map(type => (
               <TabsTrigger key={type} value={type}>

@@ -9,9 +9,9 @@ export default function Trends() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Tendances de l'Industrie</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Industry Trends</h1>
         <p className="text-muted-foreground mt-1">
-          Analyse des tendances majeures impactant le secteur ESG financier
+          Analysis of major trends impacting the financial ESG sector
         </p>
       </div>
 
@@ -26,7 +26,7 @@ export default function Trends() {
                     {trend.title}
                   </CardTitle>
                   <CardDescription>
-                    Depuis {new Date(trend.startDate).toLocaleDateString('fr-FR')}
+                    Since {new Date(trend.startDate).toLocaleDateString('en-US')}
                   </CardDescription>
                 </div>
                 <div className="inline-flex items-center gap-1 bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-sm">
@@ -43,14 +43,14 @@ export default function Trends() {
                 <div className="text-sm font-medium mb-2">Impact</div>
                 <Progress value={trend.impactScore} className="h-2 mb-2" />
                 <div className="grid grid-cols-3 text-xs text-muted-foreground">
-                  <div>Faible</div>
-                  <div className="text-center">Modéré</div>
-                  <div className="text-right">Élevé</div>
+                  <div>Low</div>
+                  <div className="text-center">Moderate</div>
+                  <div className="text-right">High</div>
                 </div>
               </div>
 
               <div>
-                <div className="text-sm font-medium mb-2">Catégories</div>
+                <div className="text-sm font-medium mb-2">Categories</div>
                 <div className="flex flex-wrap gap-2">
                   {trend.categories.map((category) => (
                     <span 
@@ -65,7 +65,7 @@ export default function Trends() {
 
               {trend.relatedCompetitors.length > 0 && (
                 <div>
-                  <div className="text-sm font-medium mb-2">Concurrents concernés</div>
+                  <div className="text-sm font-medium mb-2">Related Competitors</div>
                   <div className="space-y-2">
                     {trend.relatedCompetitors.map((id) => {
                       const competitor = competitors.find(c => c.id === id);
@@ -88,7 +88,7 @@ export default function Trends() {
               
               <div className="pt-2">
                 <button className="text-primary font-medium inline-flex items-center hover:underline">
-                  Voir l'analyse complète
+                  View full analysis
                   <ArrowUpRight className="ml-1 h-4 w-4" />
                 </button>
               </div>

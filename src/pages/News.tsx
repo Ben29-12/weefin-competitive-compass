@@ -32,9 +32,9 @@ export default function News() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Actualités</h1>
+        <h1 className="text-3xl font-bold tracking-tight">News</h1>
         <p className="text-muted-foreground mt-1">
-          Dernières actualités pertinentes pour notre veille concurrentielle
+          Latest news relevant to our competitive intelligence
         </p>
       </div>
 
@@ -42,7 +42,7 @@ export default function News() {
         <div className="relative flex-1">
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input
-            placeholder="Rechercher dans les actualités..."
+            placeholder="Search news..."
             className="pl-8"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -54,13 +54,13 @@ export default function News() {
             <DropdownMenuTrigger asChild>
               <Button variant="outline" className="flex items-center gap-2">
                 <Filter className="h-4 w-4" />
-                {categoryFilter || "Filtrer par catégorie"}
+                {categoryFilter || "Filter by category"}
                 <ChevronDown className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               <DropdownMenuItem onClick={() => setCategoryFilter(null)}>
-                Toutes les catégories
+                All categories
               </DropdownMenuItem>
               {categories.map(category => (
                 <DropdownMenuItem 
@@ -79,13 +79,13 @@ export default function News() {
                 <Filter className="h-4 w-4" />
                 {competitorFilter 
                   ? competitors.find(c => c.id === competitorFilter)?.name
-                  : "Filtrer par concurrent"}
+                  : "Filter by competitor"}
                 <ChevronDown className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               <DropdownMenuItem onClick={() => setCompetitorFilter(null)}>
-                Tous les concurrents
+                All competitors
               </DropdownMenuItem>
               {competitors.map(competitor => (
                 <DropdownMenuItem 
@@ -116,7 +116,7 @@ export default function News() {
                         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1">
                           <span className="text-sm text-muted-foreground">{item.source}</span>
                           <span className="text-sm text-muted-foreground">
-                            {new Date(item.date).toLocaleDateString('fr-FR')}
+                            {new Date(item.date).toLocaleDateString('en-US')}
                           </span>
                         </div>
                       </div>
@@ -136,7 +136,7 @@ export default function News() {
                       
                       {item.relatedCompetitors.length > 0 && (
                         <div>
-                          <div className="text-sm font-medium mb-1">Concurrents mentionnés:</div>
+                          <div className="text-sm font-medium mb-1">Mentioned competitors:</div>
                           <div className="flex flex-wrap gap-2">
                             {item.relatedCompetitors.map(id => {
                               const competitor = competitors.find(c => c.id === id);
@@ -162,12 +162,12 @@ export default function News() {
                           rel="noopener noreferrer"
                           className="text-primary font-medium inline-flex items-center hover:underline"
                         >
-                          Lire l'article complet
+                          Read full article
                           <ExternalLink className="ml-1 h-4 w-4" />
                         </a>
                         
                         <Button variant="outline" size="sm">
-                          Sauvegarder
+                          Save
                         </Button>
                       </div>
                     </div>
@@ -178,8 +178,8 @@ export default function News() {
           ))
         ) : (
           <div className="text-center py-12">
-            <h3 className="text-lg font-medium">Aucune actualité trouvée</h3>
-            <p className="text-muted-foreground mt-1">Ajustez vos critères de recherche</p>
+            <h3 className="text-lg font-medium">No news found</h3>
+            <p className="text-muted-foreground mt-1">Adjust your search criteria</p>
           </div>
         )}
       </div>

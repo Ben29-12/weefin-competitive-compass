@@ -11,7 +11,7 @@ export function AppLayout() {
         <main className="flex-1 overflow-auto">
           <div className="flex items-center p-4 border-b">
             <SidebarTrigger />
-            <div className="ml-4 text-lg font-medium">WeeFin Veille Concurrentielle</div>
+            <div className="ml-4 text-lg font-medium">WeeFin Competitive Intelligence</div>
           </div>
           <div className="p-6">
             <Outlet />

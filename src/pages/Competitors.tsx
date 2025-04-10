@@ -42,9 +42,9 @@ export default function Competitors() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Concurrents</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Competitors</h1>
         <p className="text-muted-foreground mt-1">
-          Liste des principaux concurrents et de leurs activités récentes
+          List of key competitors and their recent activities
         </p>
       </div>
 
@@ -52,7 +52,7 @@ export default function Competitors() {
         <div className="relative flex-1">
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input
-            placeholder="Rechercher par nom ou description..."
+            placeholder="Search by name or description..."
             className="pl-8"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -65,13 +65,13 @@ export default function Competitors() {
               <Filter className="h-4 w-4" />
               {activityFilter 
                 ? activityTypes.find(t => t.value === activityFilter)?.label
-                : "Filtrer par activité"}
+                : "Filter by activity"}
               <ChevronDown className="h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuItem onClick={() => setActivityFilter(null)}>
-              Toutes les activités
+              All activities
             </DropdownMenuItem>
             {activityTypes.map(type => (
               <DropdownMenuItem 
@@ -109,12 +109,12 @@ export default function Competitors() {
                     <DropdownMenuContent align="end">
                       <DropdownMenuItem asChild>
                         <Link to={`/competitor/${competitor.id}`}>
-                          Voir profil complet
+                          View full profile
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem>
                         <a href={competitor.website} target="_blank" rel="noopener noreferrer">
-                          Visiter le site web
+                          Visit website
                         </a>
                       </DropdownMenuItem>
                     </DropdownMenuContent>
@@ -137,7 +137,7 @@ export default function Competitors() {
 
                 <div className="p-4">
                   <div className="text-sm font-medium mb-3">
-                    Activités récentes 
+                    Recent Activities 
                     {activityFilter && ` - ${activityTypes.find(t => t.value === activityFilter)?.label}`}
                   </div>
                   {competitor.filteredActivities.length > 0 ? (
@@ -147,7 +147,7 @@ export default function Competitors() {
                           <div className="flex justify-between items-start mb-1">
                             <div className="font-medium text-sm">{activity.title}</div>
                             <div className="text-xs text-muted-foreground">
-                              {new Date(activity.date).toLocaleDateString('fr-FR')}
+                              {new Date(activity.date).toLocaleDateString('en-US')}
                             </div>
                           </div>
                           <div className="flex justify-between items-center">
@@ -162,7 +162,7 @@ export default function Competitors() {
                             to={`/competitor/${competitor.id}`} 
                             className="text-xs text-primary hover:underline inline-flex items-center"
                           >
-                            Voir {competitor.filteredActivities.length - 3} activités de plus
+                            See {competitor.filteredActivities.length - 3} more activities
                             <ArrowUpRight className="ml-1 h-3 w-3" />
                           </Link>
                         </div>
@@ -170,7 +170,7 @@ export default function Competitors() {
                     </div>
                   ) : (
                     <div className="text-center py-4 text-sm text-muted-foreground">
-                      Aucune activité correspondante trouvée.
+                      No matching activities found.
                     </div>
                   )}
                 </div>
@@ -180,7 +180,7 @@ export default function Competitors() {
                     to={`/competitor/${competitor.id}`} 
                     className="text-sm text-primary font-medium hover:underline flex items-center"
                   >
-                    Voir profil complet
+                    View full profile
                     <ArrowUpRight className="ml-1 h-4 w-4" />
                   </Link>
                 </div>
@@ -189,8 +189,8 @@ export default function Competitors() {
           ))
         ) : (
           <div className="col-span-2 text-center py-12">
-            <h3 className="text-lg font-medium">Aucun concurrent trouvé</h3>
-            <p className="text-muted-foreground mt-1">Ajustez vos critères de recherche</p>
+            <h3 className="text-lg font-medium">No competitors found</h3>
+            <p className="text-muted-foreground mt-1">Adjust your search criteria</p>
           </div>
         )}
       </div>

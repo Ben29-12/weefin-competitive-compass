@@ -30,7 +30,7 @@ export const RecentActivities = () => {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   
   return (
-    <Card className="col-span-1 md:col-span-2">
+    <Card>
       <CardHeader>
         <div>
           <CardTitle>Recent Competitor Activities</CardTitle>

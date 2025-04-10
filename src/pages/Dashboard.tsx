@@ -8,10 +8,8 @@ export default function Dashboard() {
     <div className="space-y-6">
       <DashboardHeader />
       
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <RecentActivities />
-      </div>
-
+      <RecentActivities />
+      
       <CompetitorsOverview />
     </div>
   );

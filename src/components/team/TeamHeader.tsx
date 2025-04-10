@@ -11,7 +11,7 @@ export function TeamHeader({ onAddMember }: TeamHeaderProps) {
     <div>
       <Button className="flex items-center gap-1" onClick={onAddMember}>
         <UserPlus className="h-4 w-4" />
-        Ajouter un membre
+        Add member
       </Button>
     </div>
   );

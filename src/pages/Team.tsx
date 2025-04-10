@@ -8,37 +8,37 @@ export default function Team() {
     {
       id: 1,
       name: "Sophie Martin",
-      role: "Analyste Senior",
+      role: "Senior Analyst",
       email: "sophie.martin@example.com",
       phone: "+33 6 12 34 56 78",
-      team: "Veille concurrentielle",
+      team: "Competitive Intelligence",
       assignedCompetitors: ["Bloomberg ESG", "JPM Fusion"],
       avatar: ""
     },
     {
       id: 2,
       name: "Thomas Dubois",
-      role: "Responsable Veille",
+      role: "Intelligence Manager",
       email: "thomas.dubois@example.com",
       phone: "+33 6 23 45 67 89",
-      team: "Veille concurrentielle",
+      team: "Competitive Intelligence",
       assignedCompetitors: ["S&P Market Intelligence", "FactSet"],
       avatar: ""
     },
     {
       id: 3,
       name: "Camille Bernard",
-      role: "Analyste Produit",
+      role: "Product Analyst",
       email: "camille.bernard@example.com",
       phone: "+33 6 34 56 78 90",
-      team: "Produit",
+      team: "Product",
       assignedCompetitors: ["Rimes", "Clarity AI"],
       avatar: ""
     },
     {
       id: 4,
       name: "Alexandre Petit",
-      role: "Analyste de Marché",
+      role: "Market Analyst",
       email: "alexandre.petit@example.com",
       phone: "+33 6 45 67 89 01",
       team: "Marketing",
@@ -48,10 +48,10 @@ export default function Team() {
     {
       id: 5,
       name: "Julie Laurent",
-      role: "Responsable Stratégie",
+      role: "Strategy Manager",
       email: "julie.laurent@example.com",
       phone: "+33 6 56 78 90 12",
-      team: "Direction",
+      team: "Management",
       assignedCompetitors: [],
       avatar: ""
     }
@@ -65,9 +65,9 @@ export default function Team() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Équipe</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Team</h1>
         <p className="text-muted-foreground mt-1">
-          Membres de l'équipe impliqués dans la veille concurrentielle
+          Team members involved in competitive intelligence
         </p>
       </div>
 

@@ -54,7 +54,7 @@ export function TeamMembersList({ members, onAddMember }: TeamMembersListProps) 
         
         {filteredMembers.length === 0 && (
           <div className="text-center py-8 text-muted-foreground">
-            Aucun membre trouvé.
+            No members found.
           </div>
         )}
       </div>

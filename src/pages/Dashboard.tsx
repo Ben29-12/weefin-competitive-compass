@@ -32,36 +32,36 @@ export default function Dashboard() {
     .slice(0, 5);
 
   const upcomingEvents = [
-    { id: 1, title: "ESG Data & Tech Summit", date: "2024-05-15", location: "Londres", type: "conference" },
-    { id: 2, title: "Webinaire Bloomberg: Nouvelles Solutions ESG", date: "2024-04-22", type: "webinar" },
+    { id: 1, title: "ESG Data & Tech Summit", date: "2024-05-15", location: "London", type: "conference" },
+    { id: 2, title: "Bloomberg Webinar: New ESG Solutions", date: "2024-04-22", type: "webinar" },
     { id: 3, title: "Sustainable Finance Forum", date: "2024-06-10", location: "Paris", type: "conference" },
   ];
   
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Tableau de Bord</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
         <p className="text-muted-foreground mt-2">
-          Vue d'ensemble du paysage concurrentiel et des derniers développements
+          Overview of the competitive landscape and latest developments
         </p>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Concurrents suivis</CardTitle>
+            <CardTitle className="text-sm font-medium">Tracked Competitors</CardTitle>
             <Building className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{competitors.length}</div>
             <p className="text-xs text-muted-foreground mt-1">
-              Acteurs majeurs du secteur
+              Major players in the sector
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Activités récentes</CardTitle>
+            <CardTitle className="text-sm font-medium">Recent Activities</CardTitle>
             <BarChart2 className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
@@ -69,31 +69,31 @@ export default function Dashboard() {
               {competitors.reduce((sum, comp) => sum + comp.recentActivity.length, 0)}
             </div>
             <p className="text-xs text-muted-foreground mt-1">
-              Dans les 90 derniers jours
+              In the last 90 days
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Tendances identifiées</CardTitle>
+            <CardTitle className="text-sm font-medium">Identified Trends</CardTitle>
             <TrendingUp className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{industryTrends.length}</div>
             <p className="text-xs text-muted-foreground mt-1">
-              Impact moyen: élevé
+              Average impact: high
             </p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Actualités</CardTitle>
+            <CardTitle className="text-sm font-medium">News</CardTitle>
             <Newspaper className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{news.length}</div>
             <p className="text-xs text-muted-foreground mt-1">
-              Mentions dans la presse spécialisée
+              Mentions in specialized press
             </p>
           </CardContent>
         </Card>
@@ -102,9 +102,9 @@ export default function Dashboard() {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         <Card className="col-span-1 md:col-span-2">
           <CardHeader>
-            <CardTitle>Activités récentes des concurrents</CardTitle>
+            <CardTitle>Recent Competitor Activities</CardTitle>
             <CardDescription>
-              Dernières actions et développements significatifs
+              Latest actions and significant developments
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -114,7 +114,7 @@ export default function Dashboard() {
                   <div className="flex items-start justify-between mb-1">
                     <div className="font-medium">{activity.title}</div>
                     <div className="text-sm text-muted-foreground">
-                      {new Date(activity.date).toLocaleDateString('fr-FR')}
+                      {new Date(activity.date).toLocaleDateString('en-US')}
                     </div>
                   </div>
                   <div className="text-sm text-muted-foreground mb-2">
@@ -133,7 +133,7 @@ export default function Dashboard() {
               ))}
               <div className="text-right">
                 <Link to="/competitors" className="inline-flex items-center text-sm font-medium text-primary hover:underline">
-                  Voir toutes les activités
+                  View all activities
                   <ArrowUpRight className="ml-1 h-4 w-4" />
                 </Link>
               </div>
@@ -143,9 +143,9 @@ export default function Dashboard() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Événements à venir</CardTitle>
+            <CardTitle>Upcoming Events</CardTitle>
             <CardDescription>
-              Conférences et webinaires du secteur
+              Industry conferences and webinars
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -166,7 +166,7 @@ export default function Dashboard() {
               ))}
               <div className="text-right">
                 <button className="inline-flex items-center text-sm font-medium text-primary hover:underline mt-2">
-                  Voir tout le calendrier
+                  View full calendar
                   <ArrowUpRight className="ml-1 h-4 w-4" />
                 </button>
               </div>
@@ -178,9 +178,9 @@ export default function Dashboard() {
       <div className="grid gap-4 md:grid-cols-2">
         <Card>
           <CardHeader>
-            <CardTitle>Tendances de l'industrie</CardTitle>
+            <CardTitle>Industry Trends</CardTitle>
             <CardDescription>
-              Évolutions majeures dans le secteur ESG financier
+              Major developments in the financial ESG sector
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -207,7 +207,7 @@ export default function Dashboard() {
               ))}
               <div className="text-right">
                 <Link to="/trends" className="inline-flex items-center text-sm font-medium text-primary hover:underline">
-                  Voir toutes les tendances
+                  View all trends
                   <ArrowUpRight className="ml-1 h-4 w-4" />
                 </Link>
               </div>
@@ -217,9 +217,9 @@ export default function Dashboard() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Actualités récentes</CardTitle>
+            <CardTitle>Recent News</CardTitle>
             <CardDescription>
-              Derniers articles pertinents pour notre veille
+              Latest articles relevant to our monitoring
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -230,7 +230,7 @@ export default function Dashboard() {
                   <div className="flex items-center justify-between mb-2">
                     <div className="text-sm text-muted-foreground">{item.source}</div>
                     <div className="text-sm text-muted-foreground">
-                      {new Date(item.date).toLocaleDateString('fr-FR')}
+                      {new Date(item.date).toLocaleDateString('en-US')}
                     </div>
                   </div>
                   {item.relatedCompetitors.length > 0 && (
@@ -249,7 +249,7 @@ export default function Dashboard() {
               ))}
               <div className="text-right">
                 <Link to="/news" className="inline-flex items-center text-sm font-medium text-primary hover:underline">
-                  Voir toutes les actualités
+                  View all news
                   <ArrowUpRight className="ml-1 h-4 w-4" />
                 </Link>
               </div>
@@ -260,9 +260,9 @@ export default function Dashboard() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Vue d'ensemble des concurrents</CardTitle>
+          <CardTitle>Competitors Overview</CardTitle>
           <CardDescription>
-            Les acteurs majeurs de notre écosystème concurrentiel
+            Major players in our competitive ecosystem
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -284,7 +284,7 @@ export default function Dashboard() {
                   {competitor.description}
                 </div>
                 <div className="mb-3">
-                  <div className="text-xs text-muted-foreground mb-1">Produits clés:</div>
+                  <div className="text-xs text-muted-foreground mb-1">Key products:</div>
                   <div className="flex flex-wrap gap-1">
                     {competitor.keyProducts.slice(0, 2).map((product) => (
                       <span key={product} className="text-xs bg-slate-100 px-2 py-0.5 rounded-full">
@@ -303,7 +303,7 @@ export default function Dashboard() {
                     to={`/competitor/${competitor.id}`} 
                     className="text-sm text-primary font-medium hover:underline flex items-center"
                   >
-                    Voir profil complet
+                    View full profile
                     <ArrowUpRight className="ml-1 h-4 w-4" />
                   </Link>
                 </div>

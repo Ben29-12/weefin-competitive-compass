@@ -1,6 +1,5 @@
 
 import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
-import { MetricCards } from "@/components/dashboard/MetricCards";
 import { RecentActivities } from "@/components/dashboard/RecentActivities";
 import { UpcomingEvents } from "@/components/dashboard/UpcomingEvents";
 import { IndustryTrends } from "@/components/dashboard/IndustryTrends";
@@ -11,7 +10,6 @@ export default function Dashboard() {
   return (
     <div className="space-y-6">
       <DashboardHeader />
-      <MetricCards />
       
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         <RecentActivities />

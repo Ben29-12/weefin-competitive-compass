@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Building, TrendingUp, Zap, Users } from "lucide-react";
+import { Building, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const QuickAccess = () => {
@@ -25,36 +25,6 @@ export const QuickAccess = () => {
             <div className="font-medium">Competitors</div>
             <div className="text-sm text-muted-foreground">
               Track competitor activities and profiles
-            </div>
-          </div>
-        </Link>
-        
-        <Link 
-          to="/trends"
-          className="flex items-center p-3 hover:bg-muted rounded-lg transition-colors"
-        >
-          <div className="h-9 w-9 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
-            <TrendingUp className="h-5 w-5 text-primary" />
-          </div>
-          <div>
-            <div className="font-medium">Trends</div>
-            <div className="text-sm text-muted-foreground">
-              Monitor market and industry trends
-            </div>
-          </div>
-        </Link>
-        
-        <Link 
-          to="/news"
-          className="flex items-center p-3 hover:bg-muted rounded-lg transition-colors"
-        >
-          <div className="h-9 w-9 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
-            <Zap className="h-5 w-5 text-primary" />
-          </div>
-          <div>
-            <div className="font-medium">News</div>
-            <div className="text-sm text-muted-foreground">
-              Latest industry news and updates
             </div>
           </div>
         </Link>

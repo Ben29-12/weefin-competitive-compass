@@ -1,7 +1,7 @@
 
 import { Sidebar, SidebarContent, SidebarHeader, SidebarGroup, SidebarGroupLabel, SidebarGroupContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarFooter } from "@/components/ui/sidebar";
 import { Link } from "react-router-dom";
-import { BarChart2, Building, FileText, Globe, Newspaper, TrendingUp, Users } from "lucide-react";
+import { BarChart2, Building, Users } from "lucide-react";
 export function AppSidebar() {
   const menuItems = [{
     title: "Dashboard",
@@ -11,22 +11,6 @@ export function AppSidebar() {
     title: "Competitors",
     url: "/competitors",
     icon: Building
-  }, {
-    title: "Trends",
-    url: "/trends",
-    icon: TrendingUp
-  }, {
-    title: "News",
-    url: "/news",
-    icon: Newspaper
-  }, {
-    title: "Industry",
-    url: "/industry",
-    icon: Globe
-  }, {
-    title: "Reports",
-    url: "/reports",
-    icon: FileText
   }, {
     title: "Team",
     url: "/team",

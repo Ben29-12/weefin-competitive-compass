@@ -5,7 +5,6 @@ import { CompetitorHeader } from "@/components/competitor-detail/CompetitorHeade
 import { InfoCards } from "@/components/competitor-detail/InfoCards";
 import { ProductsSection } from "@/components/competitor-detail/ProductsSection";
 import { ActivitiesSection } from "@/components/competitor-detail/ActivitiesSection";
-import { DocumentsSection } from "@/components/competitor-detail/DocumentsSection";
 import { NotFoundState } from "@/components/competitor-detail/NotFoundState";
 
 export default function CompetitorDetail() {
@@ -22,7 +21,6 @@ export default function CompetitorDetail() {
       <InfoCards competitor={competitor} />
       <ProductsSection competitor={competitor} />
       <ActivitiesSection competitor={competitor} />
-      <DocumentsSection competitor={competitor} />
     </div>
   );
 }

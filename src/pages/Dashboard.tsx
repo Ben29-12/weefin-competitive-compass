@@ -12,7 +12,8 @@ import {
   PieChart, 
   ArrowUpRight,
   Calendar,
-  Newspaper
+  Newspaper,
+  Building
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";

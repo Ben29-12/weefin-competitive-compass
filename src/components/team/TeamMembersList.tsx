@@ -1,6 +1,7 @@
 
 import { TeamMemberCard } from "./TeamMemberCard";
 import { SearchBar } from "./SearchBar";
+import { TeamHeader } from "./TeamHeader";
 import { useState } from "react";
 
 interface TeamMember {
@@ -16,9 +17,10 @@ interface TeamMember {
 
 interface TeamMembersListProps {
   members: TeamMember[];
+  onAddMember?: () => void;
 }
 
-export function TeamMembersList({ members }: TeamMembersListProps) {
+export function TeamMembersList({ members, onAddMember }: TeamMembersListProps) {
   const [filteredMembers, setFilteredMembers] = useState(members);
 
   const handleSearch = (query: string) => {
@@ -40,7 +42,10 @@ export function TeamMembersList({ members }: TeamMembersListProps) {
 
   return (
     <div>
-      <SearchBar onSearch={handleSearch} />
+      <div className="flex justify-between items-center mb-6">
+        <SearchBar onSearch={handleSearch} />
+        <TeamHeader onAddMember={onAddMember} />
+      </div>
       
       <div className="space-y-4">
         {filteredMembers.map((member) => (

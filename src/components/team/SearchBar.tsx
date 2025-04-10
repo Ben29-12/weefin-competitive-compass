@@ -14,7 +14,7 @@ export function SearchBar({ onSearch }: SearchBarProps) {
   };
 
   return (
-    <div className="p-2 border rounded-md mb-6 flex gap-2 items-center">
+    <div className="border rounded-md flex gap-2 items-center p-2 w-full max-w-md">
       <Search className="h-4 w-4 text-muted-foreground ml-1" />
       <Input
         placeholder="Rechercher un membre..."

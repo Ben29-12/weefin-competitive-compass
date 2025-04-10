@@ -1,6 +1,5 @@
 
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { TeamHeader } from "@/components/team/TeamHeader";
+import { Card, CardContent } from "@/components/ui/card";
 import { TeamMembersList } from "@/components/team/TeamMembersList";
 import { useState } from "react";
 
@@ -73,15 +72,8 @@ export default function Team() {
       </div>
 
       <Card>
-        <CardHeader>
-          <TeamHeader 
-            title="Membres de l'équipe" 
-            description="Collaborateurs avec accès à l'outil de veille"
-            onAddMember={handleAddMember}
-          />
-        </CardHeader>
-        <CardContent>
-          <TeamMembersList members={members} />
+        <CardContent className="pt-6">
+          <TeamMembersList members={members} onAddMember={handleAddMember} />
         </CardContent>
       </Card>
     </div>

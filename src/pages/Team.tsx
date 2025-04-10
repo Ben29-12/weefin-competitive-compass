@@ -1,10 +1,9 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Mail, MessageCircle, Phone, Plus, Search, UserPlus } from "lucide-react";
+import { Mail, MessageCircle, Phone, Search, UserPlus } from "lucide-react";
 
 export default function Team() {
   const members = [
@@ -152,79 +151,6 @@ export default function Team() {
               </div>
             ))}
           </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Tableaux de bord partagés</CardTitle>
-          <CardDescription>
-            Tableaux de bord et rapports partagés avec l'équipe
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Tabs defaultValue="dashboards">
-            <TabsList className="mb-4">
-              <TabsTrigger value="dashboards">Tableaux de bord</TabsTrigger>
-              <TabsTrigger value="reports">Rapports</TabsTrigger>
-              <TabsTrigger value="notifications">Notifications</TabsTrigger>
-            </TabsList>
-            
-            <TabsContent value="dashboards" className="space-y-4">
-              {[
-                { id: 1, name: "Vue d'ensemble concurrentielle", shared: "Toute l'équipe", lastUpdate: "Aujourd'hui" },
-                { id: 2, name: "Suivi des innovations produits", shared: "Équipe Produit", lastUpdate: "Hier" },
-                { id: 3, name: "Analyse des partenariats", shared: "Équipe Veille", lastUpdate: "Il y a 3 jours" }
-              ].map(dashboard => (
-                <div key={dashboard.id} className="border rounded-lg p-4 flex justify-between items-center">
-                  <div>
-                    <div className="font-medium">{dashboard.name}</div>
-                    <div className="text-sm text-muted-foreground">
-                      Partagé avec: {dashboard.shared} • Dernière mise à jour: {dashboard.lastUpdate}
-                    </div>
-                  </div>
-                  <Button variant="outline" size="sm">Voir</Button>
-                </div>
-              ))}
-              
-              <div className="border rounded-lg border-dashed p-4 flex justify-center items-center">
-                <Button variant="outline" className="flex items-center gap-1">
-                  <Plus className="h-4 w-4" />
-                  Créer un tableau de bord
-                </Button>
-              </div>
-            </TabsContent>
-            
-            <TabsContent value="reports" className="space-y-4">
-              {[
-                { id: 1, name: "Rapport mensuel - Mars 2024", shared: "Direction", date: "31/03/2024" },
-                { id: 2, name: "Analyse trimestrielle", shared: "Toute l'équipe", date: "15/03/2024" }
-              ].map(report => (
-                <div key={report.id} className="border rounded-lg p-4 flex justify-between items-center">
-                  <div>
-                    <div className="font-medium">{report.name}</div>
-                    <div className="text-sm text-muted-foreground">
-                      Partagé avec: {report.shared} • Date: {report.date}
-                    </div>
-                  </div>
-                  <Button variant="outline" size="sm">Voir</Button>
-                </div>
-              ))}
-              
-              <div className="border rounded-lg border-dashed p-4 flex justify-center items-center">
-                <Button variant="outline" className="flex items-center gap-1">
-                  <Plus className="h-4 w-4" />
-                  Créer un rapport
-                </Button>
-              </div>
-            </TabsContent>
-            
-            <TabsContent value="notifications">
-              <div className="text-center py-6 text-muted-foreground">
-                Gérez ici les préférences de notification pour votre équipe.
-              </div>
-            </TabsContent>
-          </Tabs>
         </CardContent>
       </Card>
     </div>

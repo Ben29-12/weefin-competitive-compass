@@ -19,150 +19,77 @@ import {
   Globe, 
   Newspaper, 
   TrendingUp, 
-  Users,
-  Home,
-  Search,
-  Database,
-  MapPin,
-  Calendar,
-  Settings,
-  User,
-  UsersRound,
-  LineChart,
-  ChevronRight
+  Users 
 } from "lucide-react";
 
 export function AppSidebar() {
-  const menuSections = [
+  const menuItems = [
     {
-      label: "BUILD",
-      items: [
-        {
-          title: "Lookalike search",
-          url: "/lookalike-search",
-          icon: Search
-        },
-        {
-          title: "Bulk lookalikes",
-          url: "/bulk-lookalikes",
-          icon: Database
-        }
-      ]
+      title: "Tableau de Bord",
+      url: "/",
+      icon: BarChart2
     },
     {
-      label: "FOCUS",
-      items: [
-        {
-          title: "My companies",
-          url: "/my-companies",
-          icon: Building
-        },
-        {
-          title: "My contacts",
-          url: "/my-contacts",
-          icon: Users
-        }
-      ]
+      title: "Concurrents",
+      url: "/competitors",
+      icon: Building
     },
     {
-      label: "ACTIVATE",
-      items: [
-        {
-          title: "My territory",
-          url: "/my-territory",
-          icon: MapPin
-        },
-        {
-          title: "Meeting prep",
-          url: "/meeting-prep",
-          icon: Calendar,
-          badge: "BETA"
-        }
-      ]
+      title: "Tendances",
+      url: "/trends",
+      icon: TrendingUp
     },
     {
-      label: "SETTINGS",
-      items: [
-        {
-          title: "Account",
-          url: "/account",
-          icon: Settings
-        },
-        {
-          title: "User",
-          url: "/user",
-          icon: User
-        }
-      ]
+      title: "Actualités",
+      url: "/news",
+      icon: Newspaper
     },
     {
-      label: "STAFF",
-      items: [
-        {
-          title: "Accounts",
-          url: "/accounts",
-          icon: UsersRound
-        }
-      ]
+      title: "Industrie",
+      url: "/industry",
+      icon: Globe
+    },
+    {
+      title: "Rapports",
+      url: "/reports",
+      icon: FileText
+    },
+    {
+      title: "Équipe",
+      url: "/team",
+      icon: Users
     }
   ];
 
   return (
     <Sidebar>
       <SidebarHeader className="p-4">
-        <div className="flex items-center space-x-1">
-          <div className="w-6 h-6 bg-indigo-700 rounded flex items-center justify-center text-white font-bold">T</div>
-          <div className="font-bold text-xl text-indigo-700">Tamtam</div>
+        <div className="flex items-center space-x-2">
+          <div className="font-bold text-xl text-white">WeeFin Compass</div>
         </div>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-              <Link to="/" className="flex items-center gap-2">
-                <Home size={18} />
-                <span>Home</span>
-              </Link>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
+          <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {menuItems.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <Link to={item.url} className="flex items-center gap-2">
+                      <item.icon size={18} />
+                      <span>{item.title}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
         </SidebarGroup>
-
-        {menuSections.map((section, idx) => (
-          <SidebarGroup key={idx}>
-            <SidebarGroupLabel className="text-xs font-semibold text-gray-500">
-              {section.label}
-            </SidebarGroupLabel>
-            <SidebarGroupContent>
-              <SidebarMenu>
-                {section.items.map((item) => (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild>
-                      <Link to={item.url} className="flex items-center gap-2">
-                        <item.icon size={18} />
-                        <span>{item.title}</span>
-                        {item.badge && (
-                          <span className="ml-auto text-xs bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded-sm">
-                            {item.badge}
-                          </span>
-                        )}
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
-        ))}
       </SidebarContent>
-      <SidebarFooter className="p-4 border-t">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <div className="w-8 h-8 bg-indigo-700 rounded-sm flex items-center justify-center text-white font-bold">T</div>
-            <div className="ml-2 font-medium text-sm">TAMTAM</div>
-          </div>
-          <button className="text-gray-500">
-            <Settings size={16} />
-          </button>
+      <SidebarFooter className="p-4">
+        <div className="text-xs text-sidebar-foreground opacity-60">
+          © 2025 WeeFin. Tous droits réservés.
         </div>
       </SidebarFooter>
     </Sidebar>

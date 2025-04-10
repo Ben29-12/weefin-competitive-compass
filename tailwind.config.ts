@@ -70,13 +70,6 @@ export default {
 					gold: '#E6B54A',
 					gray: '#8E9196',
 					lightGray: '#F1F1F1'
-				},
-				tamtam: {
-					primary: '#4F46E5',
-					secondary: '#E5E7EB',
-					accent: '#F3F4F6',
-					text: '#111827',
-					muted: '#6B7280'
 				}
 			},
 			borderRadius: {

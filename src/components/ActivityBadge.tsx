@@ -1,5 +1,5 @@
 
-import { activityTypes } from "@/data/mockData";
+import { activityTypes } from "@/data/constants";
 
 interface ActivityBadgeProps {
   type: string;

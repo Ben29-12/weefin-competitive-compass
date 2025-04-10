@@ -1,5 +1,5 @@
 
-import { impactColors } from "@/data/mockData";
+import { impactColors } from "@/data/constants";
 
 interface ImpactBadgeProps {
   impact: 'low' | 'medium' | 'high';
@@ -9,9 +9,9 @@ interface ImpactBadgeProps {
 export function ImpactBadge({ impact, className = "" }: ImpactBadgeProps) {
   const color = impactColors[impact] || 'bg-gray-100 text-gray-800';
   const label = {
-    low: 'Faible',
-    medium: 'Moyen',
-    high: 'Élevé'
+    low: 'Low',
+    medium: 'Medium',
+    high: 'High'
   }[impact] || impact;
   
   return (

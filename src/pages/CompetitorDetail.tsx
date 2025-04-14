@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { competitors } from "@/data/mockData";
 import { CompetitorHeader } from "@/components/competitor-detail/CompetitorHeader";
 import { InfoCards } from "@/components/competitor-detail/InfoCards";
-import { ProductsSection } from "@/components/competitor-detail/ProductsSection";
 import { ActivitiesSection } from "@/components/competitor-detail/ActivitiesSection";
 import { ComparisonSection } from "@/components/competitor-detail/ComparisonSection";
 import { NotFoundState } from "@/components/competitor-detail/NotFoundState";
@@ -20,7 +19,6 @@ export default function CompetitorDetail() {
     <div className="space-y-6">
       <CompetitorHeader competitor={competitor} />
       <InfoCards competitor={competitor} />
-      <ProductsSection competitor={competitor} />
       <ActivitiesSection competitor={competitor} />
       <ComparisonSection competitor={competitor} />
     </div>

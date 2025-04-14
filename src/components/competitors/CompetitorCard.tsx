@@ -1,4 +1,3 @@
-
 import { Competitor } from "@/data/types";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ActivityBadge } from "@/components/ActivityBadge";
@@ -124,7 +123,7 @@ export function CompetitorCard({ competitor, activityFilter }: CompetitorCardPro
         <div className="p-4 bg-muted/30 border-t">
           <Link 
             to={`/competitor/${competitor.id}`} 
-            className="text-sm text-primary font-medium hover:underline flex items-center"
+            className="text-sm text-primary font-medium hover:text-weefin-blue hover:underline flex items-center transition-colors duration-200"
           >
             View full profile
             <ArrowUpRight className="ml-1 h-4 w-4" />

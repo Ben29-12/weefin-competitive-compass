@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { competitors, activityTypes } from "@/data/mockData";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -40,7 +41,7 @@ export default function Competitors() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Competitors</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Tracked Competitors</h1>
         <p className="text-muted-foreground mt-1">
           List of key competitors and their recent activities
         </p>

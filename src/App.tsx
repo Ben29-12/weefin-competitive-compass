@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import { AppLayout } from "./components/AppLayout";
 import Dashboard from "./pages/Dashboard";
 import Competitors from "./pages/Competitors";
+import NewCompetitors from "./pages/NewCompetitors";
 import CompetitorDetail from "./pages/CompetitorDetail";
 import Team from "./pages/Team";
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route element={<AppLayout />}>
             <Route path="/" element={<Dashboard />} />
             <Route path="/competitors" element={<Competitors />} />
+            <Route path="/new-competitors" element={<NewCompetitors />} />
             <Route path="/competitor/:id" element={<CompetitorDetail />} />
             <Route path="/team" element={<Team />} />
           </Route>

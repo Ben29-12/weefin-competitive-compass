@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { competitors, activityTypes } from "@/data/mockData";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -33,7 +32,6 @@ export default function Competitors() {
     )
     .map(competitor => ({
       ...competitor,
-      // Filter activities if an activity filter is applied
       filteredActivities: activityFilter 
         ? competitor.recentActivity.filter(activity => activity.type === activityFilter)
         : competitor.recentActivity
@@ -53,7 +51,7 @@ export default function Competitors() {
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input
             placeholder="Search by name or description..."
-            className="pl-8"
+            className="pl-8 hover:border-blue-500 focus:border-blue-600"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -61,7 +59,10 @@ export default function Competitors() {
         
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="flex items-center gap-2">
+            <Button 
+              variant="outline" 
+              className="flex items-center gap-2 hover:bg-blue-50 hover:border-blue-300"
+            >
               <Filter className="h-4 w-4" />
               {activityFilter 
                 ? activityTypes.find(t => t.value === activityFilter)?.label
@@ -70,12 +71,16 @@ export default function Competitors() {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem onClick={() => setActivityFilter(null)}>
+            <DropdownMenuItem 
+              className="hover:bg-blue-50" 
+              onClick={() => setActivityFilter(null)}
+            >
               All activities
             </DropdownMenuItem>
             {activityTypes.map(type => (
               <DropdownMenuItem 
                 key={type.value}
+                className="hover:bg-blue-50"
                 onClick={() => setActivityFilter(type.value)}
               >
                 {type.label}
@@ -88,21 +93,30 @@ export default function Competitors() {
       <div className="grid gap-6 md:grid-cols-2">
         {filteredCompetitors.length > 0 ? (
           filteredCompetitors.map((competitor) => (
-            <Card key={competitor.id} className="overflow-hidden">
-              <CardHeader className="bg-muted/30 pb-3">
+            <Card 
+              key={competitor.id} 
+              className="overflow-hidden hover:border-blue-300 hover:shadow-md transition-all duration-200"
+            >
+              <CardHeader className="bg-muted/30 pb-3 hover:bg-blue-50/20">
                 <div className="flex items-start justify-between">
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
                       <Building className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <CardTitle className="text-lg">{competitor.name}</CardTitle>
+                      <CardTitle className="text-lg hover:text-blue-600 transition-colors">
+                        {competitor.name}
+                      </CardTitle>
                       <CardDescription>{competitor.headquartersLocation}</CardDescription>
                     </div>
                   </div>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" size="icon">
+                      <Button 
+                        variant="ghost" 
+                        size="icon" 
+                        className="hover:bg-blue-50"
+                      >
                         <MoreHorizontal className="h-4 w-4" />
                       </Button>
                     </DropdownMenuTrigger>

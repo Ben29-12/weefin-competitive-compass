@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -70,6 +69,10 @@ export default {
 					gold: '#E6B54A',
 					gray: '#8E9196',
 					lightGray: '#F1F1F1'
+				},
+				hover: {
+					DEFAULT: "#0EA5E9",
+					foreground: "#FFFFFF"
 				}
 			},
 			borderRadius: {

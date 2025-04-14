@@ -1,6 +1,6 @@
 
 import { Competitor } from "@/data/types";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Box } from "lucide-react";
 
 interface CompetitorHeaderProps {
   competitor: Competitor;
@@ -14,6 +14,13 @@ export function CompetitorHeader({ competitor }: CompetitorHeaderProps) {
         <p className="text-muted-foreground mt-1 max-w-2xl">
           {competitor.description}
         </p>
+        {competitor.keyProducts && competitor.keyProducts.length > 0 && (
+          <div className="mt-3 flex items-center text-sm text-muted-foreground">
+            <Box className="h-4 w-4 mr-2" />
+            <span className="font-medium">Key Products:</span>
+            <span className="ml-2">{competitor.keyProducts.join(", ")}</span>
+          </div>
+        )}
       </div>
       <a
         href={competitor.website}
@@ -27,3 +34,4 @@ export function CompetitorHeader({ competitor }: CompetitorHeaderProps) {
     </div>
   );
 }
+

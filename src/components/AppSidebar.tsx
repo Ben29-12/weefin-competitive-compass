@@ -1,4 +1,3 @@
-
 import { Sidebar, SidebarContent, SidebarHeader, SidebarGroup, SidebarGroupLabel, SidebarGroupContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarFooter } from "@/components/ui/sidebar";
 import { Link } from "react-router-dom";
 import { BarChart2, Building, Users } from "lucide-react";
@@ -40,9 +39,7 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter className="p-4">
-        <div className="text-xs text-sidebar-foreground opacity-60">
-          © 2025 WeeFin. All rights reserved.
-        </div>
+        <div className="text-xs text-sidebar-foreground opacity-60">© 2025 Tamtam. All rights reserved.</div>
       </SidebarFooter>
     </Sidebar>;
 }

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -120,7 +119,7 @@ export default function NewCompetitors() {
                 </Button>
                 <Button 
                   onClick={() => handleTrack(competitor.id)}
-                  className="text-sm bg-blue-600 hover:bg-blue-700"
+                  className="text-sm bg-sidebar-primary hover:bg-sidebar-primary/90"
                 >
                   <Plus className="mr-1 h-4 w-4" />
                   Track competitor

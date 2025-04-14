@@ -1,8 +1,13 @@
+
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Star, Plus, X, ExternalLink } from "lucide-react";
+import { Star, Plus, X, ExternalLink, Linkedin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
 
 // Sample suggested competitors data
 const suggestedCompetitors = [
@@ -42,23 +47,95 @@ const suggestedCompetitors = [
 
 export default function NewCompetitors() {
   const [competitors, setCompetitors] = useState(suggestedCompetitors);
+  const [linkedinUrl, setLinkedinUrl] = useState("");
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const { toast } = useToast();
 
   const handleTrack = (id: string) => {
     setCompetitors(competitors.filter(comp => comp.id !== id));
     // In a real app, this would add the competitor to the tracked list
+    
+    toast({
+      title: "Competitor Tracked",
+      description: "The competitor has been added to your tracked list.",
+    });
   };
 
   const handleDismiss = (id: string) => {
     setCompetitors(competitors.filter(comp => comp.id !== id));
+    
+    toast({
+      title: "Competitor Dismissed",
+      description: "The competitor has been removed from suggestions.",
+    });
+  };
+
+  const handleAddByLinkedin = () => {
+    if (!linkedinUrl) {
+      toast({
+        title: "LinkedIn URL Required",
+        description: "Please enter a valid LinkedIn URL.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // In a real app, this would parse the LinkedIn URL and add the competitor
+    toast({
+      title: "Competitor Added",
+      description: "The competitor from LinkedIn has been added to your tracked list.",
+    });
+
+    // Reset the form and close the dialog
+    setLinkedinUrl("");
+    setIsDialogOpen(false);
   };
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold tracking-tight">New Competitors</h1>
-        <p className="text-muted-foreground mt-1">
-          Discover and track new competitors in your industry
-        </p>
+      <div className="flex items-start justify-between">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight">New Competitors</h1>
+          <p className="text-muted-foreground mt-1">
+            Discover and track new competitors in your industry
+          </p>
+        </div>
+        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+          <DialogTrigger asChild>
+            <Button className="bg-sidebar-primary hover:bg-sidebar-primary/90">
+              <Linkedin className="mr-2 h-4 w-4" />
+              Add from LinkedIn
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-md">
+            <DialogHeader>
+              <DialogTitle>Add competitor from LinkedIn</DialogTitle>
+              <DialogDescription>
+                Enter the LinkedIn URL of a company to add them as a competitor.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="grid gap-4 py-4">
+              <div className="grid gap-2">
+                <Label htmlFor="linkedin-url">LinkedIn URL</Label>
+                <Input
+                  id="linkedin-url"
+                  placeholder="https://www.linkedin.com/company/example"
+                  value={linkedinUrl}
+                  onChange={(e) => setLinkedinUrl(e.target.value)}
+                  className="w-full"
+                />
+              </div>
+            </div>
+            <DialogFooter>
+              <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
+                Cancel
+              </Button>
+              <Button onClick={handleAddByLinkedin} className="bg-sidebar-primary hover:bg-sidebar-primary/90">
+                Add Competitor
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </div>
 
       {competitors.length > 0 ? (

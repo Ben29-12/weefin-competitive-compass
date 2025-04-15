@@ -2,6 +2,8 @@
 import { CompetitorActivity } from "@/data/types";
 import { ActivityBadge } from "@/components/ActivityBadge";
 import { ImpactBadge } from "@/components/ImpactBadge";
+import { Link2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface ActivityItemProps {
   activity: CompetitorActivity;
@@ -20,8 +22,19 @@ export function ActivityItem({ activity }: ActivityItemProps) {
         {activity.description}
       </p>
       <div className="flex items-center justify-between">
-        <ActivityBadge type={activity.type} />
-        {activity.impact && <ImpactBadge impact={activity.impact} />}
+        <div className="flex items-center gap-2">
+          <ActivityBadge type={activity.type} />
+          {activity.impact && <ImpactBadge impact={activity.impact} />}
+        </div>
+        {activity.source && (
+          <Link 
+            to={activity.source} 
+            className="inline-flex items-center text-xs text-muted-foreground hover:text-primary"
+          >
+            <Link2 className="h-3 w-3 mr-1" />
+            Source
+          </Link>
+        )}
       </div>
     </div>
   );

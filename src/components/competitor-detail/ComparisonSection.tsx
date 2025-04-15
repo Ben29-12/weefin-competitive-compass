@@ -20,14 +20,13 @@ export function ComparisonSection({ competitor }: ComparisonSectionProps) {
       <CardHeader>
         <CardTitle>Comparison with Weefin</CardTitle>
         <CardDescription>
-          Compare products, pricing, and focus areas between Weefin and {competitor.name}
+          Compare products and focus areas between Weefin and {competitor.name}
         </CardDescription>
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="products">
           <TabsList className="mb-4">
             <TabsTrigger value="products">Products</TabsTrigger>
-            <TabsTrigger value="pricing">Pricing</TabsTrigger>
             <TabsTrigger value="focus">Focus Areas</TabsTrigger>
           </TabsList>
           
@@ -56,37 +55,6 @@ export function ComparisonSection({ competitor }: ComparisonSectionProps) {
                     <TableCell className="font-medium">Climate Risk Assessment</TableCell>
                     <TableCell>AI-powered predictive modeling</TableCell>
                     <TableCell>Basic assessment tools</TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </div>
-          </TabsContent>
-          
-          <TabsContent value="pricing" className="space-y-4">
-            <div className="rounded-lg border">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead className="w-[200px]">Pricing Model</TableHead>
-                    <TableHead>Weefin</TableHead>
-                    <TableHead>{competitor.name}</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell className="font-medium">Subscription Tiers</TableCell>
-                    <TableCell>3 flexible tiers with modular add-ons</TableCell>
-                    <TableCell>{competitor.name.includes("JPM") ? "2 rigid enterprise plans" : "Complex pricing structure"}</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Free Trial</TableCell>
-                    <TableCell>30-day full access</TableCell>
-                    <TableCell>Limited demo only</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Enterprise Discount</TableCell>
-                    <TableCell>Transparent volume-based pricing</TableCell>
-                    <TableCell>Case-by-case negotiation</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>

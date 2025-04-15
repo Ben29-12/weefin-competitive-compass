@@ -1,11 +1,10 @@
-
 import { Competitor } from '../types';
 
 export const financialCompetitors: Competitor[] = [
   {
     id: "jpm-fusion",
     name: "JPM Fusion Sustainable Investment Data Solutions",
-    logo: "placeholder.svg",
+    logo: "/lovable-uploads/18716333-5df3-4c68-ae78-c8fba0fc7709.png",
     description: "Global leader in ESG solutions for financial institutions with a wide range of data and analytics products.",
     website: "https://example.com/jpm",
     founded: 2012,
@@ -45,7 +44,7 @@ export const financialCompetitors: Competitor[] = [
   {
     id: "bloomberg-esg",
     name: "Bloomberg ESG",
-    logo: "placeholder.svg",
+    logo: "/lovable-uploads/aad6ed96-5b98-443d-9d50-b81fbbf96545.png",
     description: "Leading provider of ESG data integrated with the Bloomberg terminal and dedicated analytical solutions.",
     website: "https://example.com/bloomberg",
     founded: 2009,

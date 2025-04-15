@@ -1,11 +1,10 @@
-
 import { Competitor } from '../types';
 
 export const analyticsCompetitors: Competitor[] = [
   {
     id: "sp-market-intelligence",
     name: "S&P Market Intelligence",
-    logo: "placeholder.svg",
+    logo: "/lovable-uploads/9b03414d-30e9-4f49-be0c-903662832abe.png",
     description: "Major provider of ESG data, analytics, and reporting tools for financial players.",
     website: "https://example.com/sp",
     founded: 2005,
@@ -45,7 +44,7 @@ export const analyticsCompetitors: Competitor[] = [
   {
     id: "factset",
     name: "FactSet",
-    logo: "placeholder.svg",
+    logo: "/lovable-uploads/5233d3ea-9dea-4763-bc66-23358e92b575.png",
     description: "Comprehensive financial analysis platform with a rapidly growing ESG offering.",
     website: "https://example.com/factset",
     founded: 1998,

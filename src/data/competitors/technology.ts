@@ -1,11 +1,10 @@
-
 import { Competitor } from '../types';
 
 export const technologyCompetitors: Competitor[] = [
   {
     id: "rimes",
     name: "Rimes",
-    logo: "placeholder.svg",
+    logo: "/lovable-uploads/7a00eae3-1dd4-40cf-bba3-53a130e598e5.png",
     description: "Specialist in ESG data and managed services for the financial industry.",
     website: "https://example.com/rimes",
     founded: 2007,
@@ -45,7 +44,7 @@ export const technologyCompetitors: Competitor[] = [
   {
     id: "clarity-ai",
     name: "Clarity AI",
-    logo: "placeholder.svg",
+    logo: "/lovable-uploads/a340d1eb-a93c-42cc-8935-3891aa7c9ee0.png",
     description: "Technological platform using AI for ESG impact analysis and measurement.",
     website: "https://example.com/clarity",
     founded: 2017,

@@ -20,7 +20,7 @@ export function CompetitorsList({ competitors, activityFilter }: CompetitorsList
   }
 
   return (
-    <>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-auto">
       {competitors.map((competitor) => (
         <CompetitorCard 
           key={competitor.id} 
@@ -28,6 +28,6 @@ export function CompetitorsList({ competitors, activityFilter }: CompetitorsList
           activityFilter={activityFilter} 
         />
       ))}
-    </>
+    </div>
   );
 }

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { competitors } from "@/data/competitors";
 import { activityTypes } from "@/data/constants";
@@ -12,7 +11,6 @@ export default function Competitors() {
   const [activityFilter, setActivityFilter] = useState<string | null>(null);
 
   const sortedCompetitors = [...competitors].sort((a, b) => {
-    // Put Clarity AI first
     if (a.name === "Clarity AI") return -1;
     if (b.name === "Clarity AI") return 1;
     return a.name.localeCompare(b.name);
@@ -54,7 +52,7 @@ export default function Competitors() {
         activityTypes={activityTypes}
       />
 
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="w-full">
         <CompetitorsList 
           competitors={filteredCompetitors} 
           activityFilter={activityFilter} 

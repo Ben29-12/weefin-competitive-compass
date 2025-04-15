@@ -25,9 +25,7 @@ interface CompetitorCardProps {
 
 export function CompetitorCard({ competitor, activityFilter }: CompetitorCardProps) {
   return (
-    <Card 
-      className="overflow-hidden hover:border-blue-300 hover:shadow-md transition-all duration-200"
-    >
+    <Card className="h-fit overflow-hidden hover:border-blue-300 hover:shadow-md transition-all duration-200">
       <CardHeader className="bg-muted/30 pb-3 hover:bg-blue-50/20">
         <div className="flex items-start justify-between">
           <div className="flex items-center space-x-3">
@@ -76,7 +74,7 @@ export function CompetitorCard({ competitor, activityFilter }: CompetitorCardPro
       </CardHeader>
       <CardContent className="p-0">
         <div className="p-4 border-b">
-          <p className="text-sm text-muted-foreground mb-3">
+          <p className="text-sm text-muted-foreground mb-3 line-clamp-3">
             {competitor.description}
           </p>
           <div className="flex flex-wrap gap-1">
@@ -96,10 +94,10 @@ export function CompetitorCard({ competitor, activityFilter }: CompetitorCardPro
           {competitor.filteredActivities.length > 0 ? (
             <div className="space-y-3">
               {competitor.filteredActivities.slice(0, 3).map((activity) => (
-                <div key={activity.id} className="border-b pb-3 last:border-0">
+                <div key={activity.id} className="border-b last:border-0 pb-3">
                   <div className="flex justify-between items-start mb-1">
                     <div className="font-medium text-sm">{activity.title}</div>
-                    <div className="text-xs text-muted-foreground">
+                    <div className="text-xs text-muted-foreground shrink-0 ml-2">
                       {new Date(activity.date).toLocaleDateString('en-US')}
                     </div>
                   </div>
@@ -131,7 +129,7 @@ export function CompetitorCard({ competitor, activityFilter }: CompetitorCardPro
         <div className="p-4 bg-muted/30 border-t">
           <Link 
             to={`/competitor/${competitor.id}`} 
-            className="text-sm text-primary font-medium hover:text-weefin-blue hover:underline flex items-center transition-colors duration-200"
+            className="text-sm text-primary font-medium hover:text-blue-600 hover:underline flex items-center transition-colors duration-200"
           >
             View full profile
             <ArrowUpRight className="ml-1 h-4 w-4" />

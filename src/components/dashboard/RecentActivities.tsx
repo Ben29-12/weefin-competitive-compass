@@ -1,14 +1,42 @@
+
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ActivityBadge } from "@/components/ActivityBadge";
 import { ImpactBadge } from "@/components/ImpactBadge";
-import { ArrowUpRight, Link2 } from "lucide-react";
+import { ArrowUpRight, Link2, Database } from "lucide-react";
 import { competitors } from "@/data/competitors";
 import { activityTypes } from "@/data/constants";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { Badge } from "@/components/ui/badge";
 
 export const RecentActivities = () => {
+  // Map activity types to their data sources
+  const getDataSource = (type: string) => {
+    switch (type) {
+      case 'product':
+        return 'Company Sources';
+      case 'pricing':
+        return 'Professional Data';
+      case 'partnership':
+        return 'Financial Press';
+      case 'acquisition':
+        return 'Financial Press';
+      case 'people_signals':
+        return 'LinkedIn';
+      case 'client':
+        return 'Industry Organizations';
+      case 'social_mentions':
+        return 'LinkedIn';
+      case 'technologies':
+        return 'Company Sources';
+      case 'marketing':
+        return 'ESG Media';
+      default:
+        return 'Other Sources';
+    }
+  };
+
   const activityTypeValues = activityTypes.map(type => type.value);
 
   const allActivities = competitors
@@ -78,7 +106,7 @@ export const RecentActivities = () => {
                         className="inline-flex items-center text-xs text-muted-foreground hover:text-primary ml-2"
                       >
                         <Link2 className="h-3 w-3 mr-1" />
-                        Source
+                        Source <span className="ml-1 italic">'{getDataSource(activity.type)}'</span>
                       </Link>
                     )}
                   </div>
@@ -124,7 +152,7 @@ export const RecentActivities = () => {
                             className="inline-flex items-center text-xs text-muted-foreground hover:text-primary ml-2"
                           >
                             <Link2 className="h-3 w-3 mr-1" />
-                            Source
+                            Source <span className="ml-1 italic">'{getDataSource(activity.type)}'</span>
                           </Link>
                         )}
                       </div>
@@ -149,3 +177,4 @@ export const RecentActivities = () => {
     </Card>
   );
 };
+

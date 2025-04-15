@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { PieChart, Pie, Cell } from "recharts";
@@ -32,8 +31,8 @@ export const SourcesDistribution = () => {
                 data={data}
                 cx="50%"
                 cy="50%"
-                innerRadius={60}
-                outerRadius={100}
+                innerRadius={40}
+                outerRadius={80}
                 paddingAngle={2}
                 dataKey="value"
                 nameKey="name"
@@ -68,14 +67,14 @@ export const SourcesDistribution = () => {
               />
             </PieChart>
           </ChartContainer>
-          <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="mt-2 grid grid-cols-2 md:grid-cols-3 gap-2">
             {data.map((item, index) => (
               <div key={item.name} className="flex items-center gap-2">
                 <div
                   className="w-3 h-3 rounded-full"
                   style={{ backgroundColor: COLORS[index % COLORS.length] }}
                 />
-                <span className="text-sm text-muted-foreground">{item.name}</span>
+                <span className="text-xs text-muted-foreground">{item.name}</span>
               </div>
             ))}
           </div>

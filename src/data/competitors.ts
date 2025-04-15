@@ -1,3 +1,4 @@
+
 import { Competitor } from './types';
 
 export const competitors: Competitor[] = [
@@ -103,7 +104,7 @@ export const competitors: Competitor[] = [
       },
       {
         id: "sp-2",
-        type: "social",
+        type: "social_mentions", // Changed from "social" to "social_mentions"
         title: "LinkedIn Campaign on ESG Adoption",
         description: "Series of widely shared posts on the importance of ESG in the financial sector.",
         date: "2024-02-18",
@@ -143,7 +144,7 @@ export const competitors: Competitor[] = [
       },
       {
         id: "factset-2",
-        type: "recruitment",
+        type: "people_signals", // Changed from "recruitment" to "people_signals"
         title: "Expansion of the ESG team",
         description: "Recruitment of 15 ESG analysts in European offices.",
         date: "2024-02-28",
@@ -192,7 +193,7 @@ export const competitors: Competitor[] = [
       },
       {
         id: "rimes-3",
-        type: "social",
+        type: "social_mentions", // Changed from "social" to "social_mentions"
         title: "Webinar on SFDR regulation",
         description: "Highly followed online event on the implications of the new regulation.",
         date: "2024-01-25",
@@ -232,7 +233,7 @@ export const competitors: Competitor[] = [
       },
       {
         id: "clarity-3",
-        type: "recruitment",
+        type: "people_signals", // Changed from "recruitment" to "people_signals"
         title: "Recruitment of a VP Engineering",
         description: "Former Microsoft technical manager joins the management team.",
         date: "2024-01-10",

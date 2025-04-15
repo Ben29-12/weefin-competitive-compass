@@ -1,7 +1,7 @@
-
 import { Sidebar, SidebarContent, SidebarHeader, SidebarGroup, SidebarGroupLabel, SidebarGroupContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarFooter } from "@/components/ui/sidebar";
 import { Link } from "react-router-dom";
 import { BarChart2, Building, Users, Star } from "lucide-react";
+import { SidebarLogo } from "./SidebarLogo";
 import { cn } from "@/lib/utils";
 
 export function AppSidebar() {
@@ -48,14 +48,7 @@ export function AppSidebar() {
       </SidebarContent>
       <SidebarFooter className="p-4 flex flex-col items-center justify-center">
         <div className="text-xs text-sidebar-foreground opacity-60 mb-2">© 2025 Tamtam. All rights reserved.</div>
-        <img 
-          src="/lovable-uploads/c264fcb2-6fdd-4874-9bec-c4042a86e991.png" 
-          alt="Weefin Logo" 
-          className={cn(
-            "h-10 w-auto", 
-            "opacity-80 hover:opacity-100 transition-opacity duration-300"
-          )} 
-        />
+        <SidebarLogo />
       </SidebarFooter>
     </Sidebar>;
 }

@@ -31,8 +31,16 @@ export function CompetitorCard({ competitor, activityFilter }: CompetitorCardPro
       <CardHeader className="bg-muted/30 pb-3 hover:bg-blue-50/20">
         <div className="flex items-start justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-              <Building className="h-5 w-5 text-primary" />
+            <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center overflow-hidden">
+              {competitor.logo ? (
+                <img 
+                  src={competitor.logo} 
+                  alt={`${competitor.name} logo`}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <Building className="h-5 w-5 text-primary" />
+              )}
             </div>
             <div>
               <CardTitle className="text-lg hover:text-blue-600 transition-colors">

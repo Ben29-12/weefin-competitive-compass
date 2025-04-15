@@ -1,4 +1,3 @@
-
 import { Competitor } from '../types';
 
 export const financialCompetitors: Competitor[] = [
@@ -66,6 +65,24 @@ export const financialCompetitors: Competitor[] = [
         date: "2024-01-30",
         impact: "high",
         source: "/sources/jpm-fortune"
+      },
+      {
+        id: "jpm-7",
+        type: "technologies",
+        title: "AI-Powered Risk Assessment",
+        description: "Implementation of advanced AI algorithms for real-time risk analysis.",
+        date: "2024-03-25",
+        impact: "high",
+        source: "/sources/jpm-ai-risk"
+      },
+      {
+        id: "jpm-8",
+        type: "marketing",
+        title: "Global Sustainability Campaign",
+        description: "Launch of digital campaign highlighting ESG capabilities across social media.",
+        date: "2024-03-20",
+        impact: "medium",
+        source: "/sources/jpm-sustainability-campaign"
       }
     ]
   },
@@ -133,6 +150,24 @@ export const financialCompetitors: Competitor[] = [
         date: "2024-01-25",
         impact: "high",
         source: "/sources/bloomberg-scoring"
+      },
+      {
+        id: "bloomberg-7",
+        type: "technologies",
+        title: "Cloud Infrastructure Expansion",
+        description: "Major investment in cloud computing capacity for real-time data processing.",
+        date: "2024-03-28",
+        impact: "high",
+        source: "/sources/bloomberg-cloud"
+      },
+      {
+        id: "bloomberg-8",
+        type: "marketing",
+        title: "ESG Leaders Podcast Series",
+        description: "Launch of weekly podcast featuring ESG industry leaders and insights.",
+        date: "2024-03-22",
+        impact: "medium",
+        source: "/sources/bloomberg-podcast"
       }
     ]
   }

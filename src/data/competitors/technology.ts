@@ -1,4 +1,3 @@
-
 import { Competitor } from '../types';
 
 export const technologyCompetitors: Competitor[] = [
@@ -66,6 +65,24 @@ export const technologyCompetitors: Competitor[] = [
         date: "2024-01-30",
         impact: "high",
         source: "/sources/rimes-client"
+      },
+      {
+        id: "rimes-7",
+        type: "technologies",
+        title: "Quantum Data Analysis Beta",
+        description: "Beta testing of quantum computing algorithms for complex ESG calculations.",
+        date: "2024-03-29",
+        impact: "high",
+        source: "/sources/rimes-quantum"
+      },
+      {
+        id: "rimes-8",
+        type: "marketing",
+        title: "ESG Tech Innovation Awards",
+        description: "Sponsorship and keynote at major ESG technology awards ceremony.",
+        date: "2024-03-21",
+        impact: "medium",
+        source: "/sources/rimes-awards"
       }
     ]
   },
@@ -133,6 +150,24 @@ export const technologyCompetitors: Competitor[] = [
         date: "2024-01-25",
         impact: "medium",
         source: "/sources/clarity-pricing"
+      },
+      {
+        id: "clarity-7",
+        type: "technologies",
+        title: "Machine Learning Platform 2.0",
+        description: "Major upgrade to ML infrastructure for ESG scoring accuracy.",
+        date: "2024-03-30",
+        impact: "high",
+        source: "/sources/clarity-ml"
+      },
+      {
+        id: "clarity-8",
+        type: "marketing",
+        title: "AI for Sustainability Summit",
+        description: "Organization of industry summit on AI applications in ESG.",
+        date: "2024-03-23",
+        impact: "high",
+        source: "/sources/clarity-summit"
       }
     ]
   }

@@ -1,4 +1,3 @@
-
 import { Competitor } from '../types';
 
 export const analyticsCompetitors: Competitor[] = [
@@ -66,6 +65,24 @@ export const analyticsCompetitors: Competitor[] = [
         date: "2024-03-01",
         impact: "medium",
         source: "/sources/sp-pricing"
+      },
+      {
+        id: "sp-7",
+        type: "technologies",
+        title: "5G Data Processing Network",
+        description: "Deployment of 5G infrastructure for faster data transmission.",
+        date: "2024-03-27",
+        impact: "high",
+        source: "/sources/sp-5g"
+      },
+      {
+        id: "sp-8",
+        type: "marketing",
+        title: "ESG Analytics Roadshow",
+        description: "Series of in-person events showcasing latest ESG analytics capabilities.",
+        date: "2024-03-18",
+        impact: "medium",
+        source: "/sources/sp-roadshow"
       }
     ]
   },
@@ -133,6 +150,24 @@ export const analyticsCompetitors: Competitor[] = [
         date: "2024-01-20",
         impact: "high",
         source: "/sources/factset-acquisition"
+      },
+      {
+        id: "factset-7",
+        type: "technologies",
+        title: "Edge Computing Implementation",
+        description: "Rollout of edge computing nodes for faster data processing.",
+        date: "2024-03-26",
+        impact: "medium",
+        source: "/sources/factset-edge"
+      },
+      {
+        id: "factset-8",
+        type: "marketing",
+        title: "Digital Transformation Series",
+        description: "Launch of video series highlighting ESG technology innovations.",
+        date: "2024-03-19",
+        impact: "medium",
+        source: "/sources/factset-video"
       }
     ]
   }

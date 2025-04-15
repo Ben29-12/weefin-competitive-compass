@@ -1,3 +1,4 @@
+
 import { Competitor } from '../types';
 
 export const clarityAiCompetitor: Competitor = {
@@ -16,7 +17,7 @@ export const clarityAiCompetitor: Competitor = {
       type: "people_signals",
       title: "Sales Team Expansion",
       description: "Clarity AI is recruiting: 1 AE (France), 3 Senior AE (Spain), 1 Associate AE (UK).",
-      date: "2025-02-15",
+      date: "2025-02",  // Changed to month/year format
       impact: "medium",
       source: "/sources/clarity-sales-expansion"
     },
@@ -25,7 +26,7 @@ export const clarityAiCompetitor: Competitor = {
       type: "people_signals",
       title: "Data Team Expansion",
       description: "Clarity AI is recruiting 6 people in Data (data science, data research, etc.).",
-      date: "2025-04-10",
+      date: "2025-04",  // Changed to month/year format
       impact: "high",
       source: "/sources/clarity-data-expansion"
     },

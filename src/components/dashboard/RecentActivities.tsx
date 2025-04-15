@@ -1,19 +1,16 @@
-
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ActivityBadge } from "@/components/ActivityBadge";
 import { ImpactBadge } from "@/components/ImpactBadge";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Link2 } from "lucide-react";
 import { competitors } from "@/data/competitors";
 import { activityTypes } from "@/data/constants";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 export const RecentActivities = () => {
-  // Get all activity types for the filter options
   const activityTypeValues = activityTypes.map(type => type.value);
 
-  // Get latest activities across all competitors
   const allActivities = competitors
     .flatMap(competitor => 
       competitor.recentActivity.map(activity => ({
@@ -70,9 +67,20 @@ export const RecentActivities = () => {
                   <div className="text-sm font-medium text-primary">
                     {activity.competitorName}
                   </div>
-                  <div className="flex space-x-2">
-                    <ActivityBadge type={activity.type} />
-                    {activity.impact && <ImpactBadge impact={activity.impact} />}
+                  <div className="flex items-center gap-2">
+                    <div className="flex space-x-2">
+                      <ActivityBadge type={activity.type} />
+                      {activity.impact && <ImpactBadge impact={activity.impact} />}
+                    </div>
+                    {activity.source && (
+                      <Link 
+                        to={activity.source} 
+                        className="inline-flex items-center text-xs text-muted-foreground hover:text-primary ml-2"
+                      >
+                        <Link2 className="h-3 w-3 mr-1" />
+                        Source
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
@@ -105,9 +113,20 @@ export const RecentActivities = () => {
                       <div className="text-sm font-medium text-primary">
                         {activity.competitorName}
                       </div>
-                      <div className="flex space-x-2">
-                        <ActivityBadge type={activity.type} />
-                        {activity.impact && <ImpactBadge impact={activity.impact} />}
+                      <div className="flex items-center gap-2">
+                        <div className="flex space-x-2">
+                          <ActivityBadge type={activity.type} />
+                          {activity.impact && <ImpactBadge impact={activity.impact} />}
+                        </div>
+                        {activity.source && (
+                          <Link 
+                            to={activity.source} 
+                            className="inline-flex items-center text-xs text-muted-foreground hover:text-primary ml-2"
+                          >
+                            <Link2 className="h-3 w-3 mr-1" />
+                            Source
+                          </Link>
+                        )}
                       </div>
                     </div>
                   </div>

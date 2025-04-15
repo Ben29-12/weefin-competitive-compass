@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { ActivityType } from "@/data/types";
 
-interface SearchAndFilterProps {
+interface SearchAndFilterProps { 
   searchTerm: string;
   setSearchTerm: (term: string) => void;
   activityFilter: string | null;
@@ -31,12 +31,12 @@ export function SearchAndFilter({
   activityTypes
 }: SearchAndFilterProps) {
   return (
-    <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+    <div className="flex items-center gap-2 w-full">
       <div className="relative flex-1">
-        <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+        <Search className="absolute left-2 top-1.5 h-3.5 w-3.5 text-muted-foreground" />
         <Input
-          placeholder="Search by name or description..."
-          className="pl-8 hover:border-blue-500 focus:border-blue-600"
+          placeholder="Search..."
+          className="pl-7 h-8 text-sm hover:border-blue-500 focus:border-blue-600"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -46,13 +46,14 @@ export function SearchAndFilter({
         <DropdownMenuTrigger asChild>
           <Button 
             variant="outline" 
-            className="flex items-center gap-2 hover:bg-blue-50 hover:border-blue-300"
+            size="sm"
+            className="flex items-center gap-1 h-8"
           >
-            <Filter className="h-4 w-4" />
+            <Filter className="h-3.5 w-3.5 mr-1" />
             {activityFilter 
               ? activityTypes.find(t => t.value === activityFilter)?.label
-              : "Filter by activity"}
-            <ChevronDown className="h-4 w-4" />
+              : "Filter"}
+            <ChevronDown className="h-3.5 w-3.5" />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
@@ -76,3 +77,4 @@ export function SearchAndFilter({
     </div>
   );
 }
+

@@ -1,10 +1,9 @@
-
 import { Competitor } from './types';
 
 export const competitors: Competitor[] = [
   {
     id: "jpm-fusion",
-    name: "JPM Fusion",
+    name: "JPM Fusion Sustainable Investment Data Solutions",
     logo: "placeholder.svg",
     description: "Global leader in ESG solutions for financial institutions with a wide range of data and analytics products.",
     website: "https://example.com/jpm",

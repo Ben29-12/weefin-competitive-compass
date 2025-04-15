@@ -1,3 +1,4 @@
+
 import { Competitor } from '../types';
 
 export const analyticsCompetitors: Competitor[] = [
@@ -15,7 +16,7 @@ export const analyticsCompetitors: Competitor[] = [
       {
         id: "sp-1",
         type: "product",
-        title: "Launch of S&P Climate Analytics API",
+        title: "S&P Climate Analytics API",
         description: "New API allowing direct integration of climate data into client systems.",
         date: "2024-03-20",
         impact: "medium",
@@ -23,15 +24,33 @@ export const analyticsCompetitors: Competitor[] = [
       },
       {
         id: "sp-2",
-        type: "social_mentions",
-        title: "LinkedIn Campaign on ESG Adoption",
-        description: "Series of widely shared posts on the importance of ESG in the financial sector.",
-        date: "2024-02-18",
-        impact: "low",
-        source: "/sources/sp-social-campaign"
+        type: "product",
+        title: "ESG Screening Tool Launch",
+        description: "New platform for automated ESG screening of investments.",
+        date: "2024-02-15",
+        impact: "high",
+        source: "/sources/sp-screening"
       },
       {
         id: "sp-3",
+        type: "pricing",
+        title: "Flexible Pricing Model",
+        description: "Introduction of usage-based pricing for API access.",
+        date: "2024-03-01",
+        impact: "medium",
+        source: "/sources/sp-pricing"
+      },
+      {
+        id: "sp-4",
+        type: "pricing",
+        title: "Enterprise Package Revision",
+        description: "Updated enterprise pricing with new feature tiers.",
+        date: "2024-02-10",
+        impact: "medium",
+        source: "/sources/sp-enterprise"
+      },
+      {
+        id: "sp-5",
         type: "partnership",
         title: "Partnership with SustainTech",
         description: "Collaboration to develop solutions dedicated to SMEs.",
@@ -40,34 +59,88 @@ export const analyticsCompetitors: Competitor[] = [
         source: "/sources/sp-partnership"
       },
       {
-        id: "sp-4",
-        type: "marketing",
-        title: "Global ESG Conference Sponsorship",
-        description: "Major sponsor of the 2024 Global ESG Investment Summit.",
-        date: "2024-03-15",
-        impact: "high",
-        source: "/sources/sp-conference"
-      },
-      {
-        id: "sp-5",
-        type: "technologies",
-        title: "AI Integration in ESG Scoring",
-        description: "Implementation of machine learning for more accurate ESG assessments.",
-        date: "2024-02-28",
-        impact: "high",
-        source: "/sources/sp-ai-integration"
-      },
-      {
         id: "sp-6",
-        type: "pricing",
-        title: "New Tiered Pricing Model",
-        description: "Introduction of flexible pricing options for different market segments.",
-        date: "2024-03-01",
-        impact: "medium",
-        source: "/sources/sp-pricing"
+        type: "partnership",
+        title: "Microsoft Azure Integration",
+        description: "Strategic partnership for cloud-based ESG analytics.",
+        date: "2024-03-05",
+        impact: "high",
+        source: "/sources/sp-microsoft"
       },
       {
         id: "sp-7",
+        type: "acquisition",
+        title: "ESG Risk Analytics Acquisition",
+        description: "Acquisition of specialized risk analysis firm.",
+        date: "2024-02-05",
+        impact: "high",
+        source: "/sources/sp-acquisition"
+      },
+      {
+        id: "sp-8",
+        type: "acquisition",
+        title: "Climate Data Venture",
+        description: "Investment in climate data collection startup.",
+        date: "2024-03-10",
+        impact: "medium",
+        source: "/sources/sp-climate-venture"
+      },
+      {
+        id: "sp-9",
+        type: "people_signals",
+        title: "ESG Research Lead",
+        description: "Appointment of renowned sustainability expert.",
+        date: "2024-02-20",
+        impact: "medium",
+        source: "/sources/sp-research-lead"
+      },
+      {
+        id: "sp-10",
+        type: "people_signals",
+        title: "Technology Team Expansion",
+        description: "Hiring of 30 data scientists for ESG analytics.",
+        date: "2024-03-15",
+        impact: "medium",
+        source: "/sources/sp-tech-hiring"
+      },
+      {
+        id: "sp-11",
+        type: "client",
+        title: "State Street Implementation",
+        description: "Major implementation with global asset manager.",
+        date: "2024-02-25",
+        impact: "high",
+        source: "/sources/sp-state-street"
+      },
+      {
+        id: "sp-12",
+        type: "client",
+        title: "Allianz Partnership",
+        description: "Strategic client partnership for insurance ESG analysis.",
+        date: "2024-03-08",
+        impact: "high",
+        source: "/sources/sp-allianz"
+      },
+      {
+        id: "sp-13",
+        type: "social_mentions",
+        title: "LinkedIn Campaign Success",
+        description: "Series of viral posts about ESG integration in finance.",
+        date: "2024-02-18",
+        impact: "low",
+        source: "/sources/sp-linkedin"
+      },
+      {
+        id: "sp-14",
+        type: "social_mentions",
+        title: "Industry Discussion",
+        description: "S&P's ESG methodology post sparked major industry debate.",
+        date: "2024-03-12",
+        impact: "medium",
+        source: "/sources/sp-discussion"
+      },
+      {
+        id: "sp-15",
         type: "technologies",
         title: "5G Data Processing Network",
         description: "Deployment of 5G infrastructure for faster data transmission.",
@@ -76,13 +149,31 @@ export const analyticsCompetitors: Competitor[] = [
         source: "/sources/sp-5g"
       },
       {
-        id: "sp-8",
+        id: "sp-16",
+        type: "technologies",
+        title: "AI Integration in ESG Scoring",
+        description: "Implementation of machine learning for more accurate ESG assessments.",
+        date: "2024-02-28",
+        impact: "high",
+        source: "/sources/sp-ai"
+      },
+      {
+        id: "sp-17",
         type: "marketing",
         title: "ESG Analytics Roadshow",
         description: "Series of in-person events showcasing latest ESG analytics capabilities.",
         date: "2024-03-18",
         impact: "medium",
         source: "/sources/sp-roadshow"
+      },
+      {
+        id: "sp-18",
+        type: "marketing",
+        title: "Digital Transformation Campaign",
+        description: "Global campaign highlighting ESG data innovation.",
+        date: "2024-02-22",
+        impact: "high",
+        source: "/sources/sp-campaign"
       }
     ]
   },
@@ -100,59 +191,131 @@ export const analyticsCompetitors: Competitor[] = [
       {
         id: "factset-1",
         type: "product",
-        title: "Major update to ESG Navigator",
-        description: "Integration of proprietary data and improvement of the user interface.",
+        title: "ESG Navigator Update",
+        description: "Major platform update with new analytics features.",
         date: "2024-03-10",
         impact: "medium",
-        source: "/sources/factset-esg-navigator"
+        source: "/sources/factset-navigator"
       },
       {
         id: "factset-2",
-        type: "people_signals",
-        title: "Expansion of the ESG team",
-        description: "Recruitment of 15 ESG analysts in European offices.",
-        date: "2024-02-28",
-        impact: "medium",
-        source: "/sources/factset-esg-recruitment"
+        type: "product",
+        title: "Portfolio Impact Tool",
+        description: "New tool for measuring portfolio ESG impact.",
+        date: "2024-02-25",
+        impact: "high",
+        source: "/sources/factset-impact"
       },
       {
         id: "factset-3",
-        type: "client",
-        title: "New client: Amundi Asset Management",
-        description: "One of the largest European asset managers adopts their ESG platform.",
-        date: "2024-01-15",
-        impact: "high",
-        source: "/sources/factset-esg-client"
+        type: "pricing",
+        title: "API Pricing Update",
+        description: "New consumption-based pricing for API services.",
+        date: "2024-03-05",
+        impact: "medium",
+        source: "/sources/factset-api"
       },
       {
         id: "factset-4",
-        type: "marketing",
-        title: "ESG Integration Webinar Series",
-        description: "Launch of educational webinar series for investment professionals.",
-        date: "2024-03-05",
-        impact: "medium",
-        source: "/sources/factset-webinar"
+        type: "pricing",
+        title: "Premium Tier Launch",
+        description: "Introduction of premium service level with advanced features.",
+        date: "2024-02-15",
+        impact: "high",
+        source: "/sources/factset-premium"
       },
       {
         id: "factset-5",
-        type: "technologies",
-        title: "Cloud Infrastructure Upgrade",
-        description: "Major enhancement of cloud-based data processing capabilities.",
-        date: "2024-02-10",
+        type: "partnership",
+        title: "AWS Partnership",
+        description: "Cloud infrastructure partnership for ESG data.",
+        date: "2024-03-01",
         impact: "high",
-        source: "/sources/factset-cloud"
+        source: "/sources/factset-aws"
       },
       {
         id: "factset-6",
+        type: "partnership",
+        title: "Academic Collaboration",
+        description: "Research partnership with top business schools.",
+        date: "2024-02-20",
+        impact: "medium",
+        source: "/sources/factset-academic"
+      },
+      {
+        id: "factset-7",
         type: "acquisition",
-        title: "Acquisition of ESG Data Provider",
+        title: "ESG Data Provider Acquisition",
         description: "Strategic acquisition to enhance ESG data coverage.",
         date: "2024-01-20",
         impact: "high",
         source: "/sources/factset-acquisition"
       },
       {
-        id: "factset-7",
+        id: "factset-8",
+        type: "acquisition",
+        title: "Analytics Startup Purchase",
+        description: "Acquisition of AI-focused ESG analytics startup.",
+        date: "2024-03-15",
+        impact: "medium",
+        source: "/sources/factset-startup"
+      },
+      {
+        id: "factset-9",
+        type: "people_signals",
+        title: "ESG Team Expansion",
+        description: "Recruitment of 15 ESG analysts in European offices.",
+        date: "2024-02-28",
+        impact: "medium",
+        source: "/sources/factset-expansion"
+      },
+      {
+        id: "factset-10",
+        type: "people_signals",
+        title: "Chief Innovation Officer",
+        description: "Appointment of new CIO focused on ESG innovation.",
+        date: "2024-03-12",
+        impact: "high",
+        source: "/sources/factset-cio"
+      },
+      {
+        id: "factset-11",
+        type: "client",
+        title: "Amundi Implementation",
+        description: "Major European asset manager adopts ESG platform.",
+        date: "2024-01-15",
+        impact: "high",
+        source: "/sources/factset-amundi"
+      },
+      {
+        id: "factset-12",
+        type: "client",
+        title: "Goldman Sachs Partnership",
+        description: "Strategic partnership for ESG data integration.",
+        date: "2024-03-08",
+        impact: "high",
+        source: "/sources/factset-goldman"
+      },
+      {
+        id: "factset-13",
+        type: "social_mentions",
+        title: "ESG Innovation Recognition",
+        description: "CEO's post about ESG innovation widely shared by industry leaders.",
+        date: "2024-03-20",
+        impact: "medium",
+        source: "/sources/factset-recognition"
+      },
+      {
+        id: "factset-14",
+        type: "social_mentions",
+        title: "Community Engagement",
+        description: "ESG webinar series receives strong social media engagement.",
+        date: "2024-02-25",
+        impact: "low",
+        source: "/sources/factset-webinar"
+      },
+      {
+        id: "factset-15",
         type: "technologies",
         title: "Edge Computing Implementation",
         description: "Rollout of edge computing nodes for faster data processing.",
@@ -161,13 +324,31 @@ export const analyticsCompetitors: Competitor[] = [
         source: "/sources/factset-edge"
       },
       {
-        id: "factset-8",
+        id: "factset-16",
+        type: "technologies",
+        title: "Blockchain Integration",
+        description: "Implementation of blockchain for ESG data verification.",
+        date: "2024-02-28",
+        impact: "high",
+        source: "/sources/factset-blockchain"
+      },
+      {
+        id: "factset-17",
         type: "marketing",
         title: "Digital Transformation Series",
         description: "Launch of video series highlighting ESG technology innovations.",
         date: "2024-03-19",
         impact: "medium",
         source: "/sources/factset-video"
+      },
+      {
+        id: "factset-18",
+        type: "marketing",
+        title: "Global ESG Summit",
+        description: "Hosted major industry summit on ESG data and analytics.",
+        date: "2024-02-15",
+        impact: "high",
+        source: "/sources/factset-summit"
       }
     ]
   }

@@ -26,14 +26,14 @@ export const SourcesDistribution = () => {
       <CardContent className="flex flex-col items-center py-2">
         <div className="flex w-full gap-4">
           <div className="w-3/5">
-            <ChartContainer config={{}} className="w-full h-40">
+            <ChartContainer config={{}} className="w-full h-52">
               <PieChart>
                 <Pie
                   data={data}
                   cx="50%"
                   cy="50%"
-                  innerRadius={25}
-                  outerRadius={50}
+                  innerRadius={30}
+                  outerRadius={60}
                   paddingAngle={1}
                   dataKey="value"
                   nameKey="name"

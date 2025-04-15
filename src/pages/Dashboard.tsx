@@ -8,12 +8,8 @@ export default function Dashboard() {
   return (
     <div className="space-y-6">
       <DashboardHeader />
-      
-      <div className="grid gap-6 md:grid-cols-2">
-        <SourcesDistribution />
-        <RecentActivities />
-      </div>
-      
+      <SourcesDistribution />
+      <RecentActivities />
       <CompetitorsOverview />
     </div>
   );

@@ -136,6 +136,42 @@ export const clarityAiCompetitor: Competitor = {
       date: "2025-04-15",
       impact: "high",
       source: "/sources/clarity-brand-campaign"
+    },
+    {
+      id: "clarity-acq-1",
+      type: "acquisition",
+      title: "Acquisition of ESG Data Analytics Startup",
+      description: "Clarity AI acquired GreenMetrics, a leading ESG data analytics startup, to enhance their sustainability measurement capabilities.",
+      date: "2025-03-15",
+      impact: "high",
+      source: "/sources/clarity-greenmetrics-acquisition"
+    },
+    {
+      id: "clarity-acq-2",
+      type: "acquisition",
+      title: "Strategic Acquisition of Climate Risk Platform",
+      description: "Clarity AI completed the acquisition of ClimateScope, a specialized climate risk assessment platform.",
+      date: "2025-01-20",
+      impact: "medium",
+      source: "/sources/clarity-climatescope-acquisition"
+    },
+    {
+      id: "clarity-sm-1",
+      type: "social_mentions",
+      title: "LinkedIn Exchange on ESG Integration",
+      description: "Sarah Martinez, Head of Sales at Clarity AI, commented on Maria Thompson's (Head of ESG at BNP Paribas) post about ESG integration strategies.",
+      date: "2025-04-10",
+      impact: "medium",
+      source: "/sources/clarity-linkedin-interaction"
+    },
+    {
+      id: "clarity-sm-2",
+      type: "social_mentions",
+      title: "Industry Discussion on ESG Standards",
+      description: "David Chen, CTO at Clarity AI, engaged with James Wilson (Head of ESG at Goldman Sachs) on standardizing ESG measurement approaches.",
+      date: "2025-03-28",
+      impact: "medium",
+      source: "/sources/clarity-esg-discussion"
     }
   ]
 };

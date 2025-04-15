@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -30,7 +29,7 @@ export const RecentActivities = () => {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   
   return (
-    <Card>
+    <Card className="min-w-[600px]">
       <CardHeader>
         <div>
           <CardTitle>Recent Competitor Activities</CardTitle>

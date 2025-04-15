@@ -32,7 +32,7 @@ export const competitors: Competitor[] = [
       },
       {
         id: "jpm-3",
-        type: "recruitment",
+        type: "people_signals",
         title: "Recruitment of a new Chief Data Officer",
         description: "Former Google data director joins the management team.",
         date: "2024-01-22",

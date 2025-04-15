@@ -14,7 +14,7 @@ export interface Competitor {
 
 export interface CompetitorActivity {
   id: string;
-  type: 'product' | 'pricing' | 'partnership' | 'acquisition' | 'recruitment' | 'client' | 'social';
+  type: 'product' | 'pricing' | 'partnership' | 'acquisition' | 'people_signals' | 'client' | 'social_mentions' | 'technologies' | 'marketing';
   title: string;
   description: string;
   date: string;
@@ -44,7 +44,7 @@ export interface IndustryTrend {
 }
 
 export type ActivityType = {
-  value: 'product' | 'pricing' | 'partnership' | 'acquisition' | 'recruitment' | 'client' | 'social';
+  value: 'product' | 'pricing' | 'partnership' | 'acquisition' | 'people_signals' | 'client' | 'social_mentions' | 'technologies' | 'marketing';
   label: string;
   color: string;
 }

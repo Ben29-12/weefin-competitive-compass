@@ -1,7 +1,8 @@
 
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { news, competitors } from "@/data/mockData";
+import { news } from "@/data/news";
+import { competitors } from "@/data/competitors";
 import { Input } from "@/components/ui/input";
 import { 
   DropdownMenu,

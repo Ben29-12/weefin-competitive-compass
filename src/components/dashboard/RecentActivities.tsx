@@ -1,10 +1,11 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ActivityBadge } from "@/components/ActivityBadge";
 import { ImpactBadge } from "@/components/ImpactBadge";
 import { ArrowUpRight } from "lucide-react";
-import { competitors } from "@/data/mockData";
+import { competitors } from "@/data/competitors";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export const RecentActivities = () => {
@@ -44,7 +45,7 @@ export const RecentActivities = () => {
             <TabsTrigger value="all">All</TabsTrigger>
             {activityTypes.map(type => (
               <TabsTrigger key={type} value={type}>
-                {type.charAt(0).toUpperCase() + type.slice(1)}
+                {typeof type === 'string' ? type.charAt(0).toUpperCase() + type.slice(1) : ''}
               </TabsTrigger>
             ))}
           </TabsList>
@@ -81,7 +82,7 @@ export const RecentActivities = () => {
           </TabsContent>
           
           {activityTypes.map(type => (
-            <TabsContent key={type} value={type} className="space-y-5">
+            <TabsContent key={typeof type === 'string' ? type : ''} value={typeof type === 'string' ? type : ''} className="space-y-5">
               {allActivities
                 .filter(activity => activity.type === type)
                 .slice(0, 5)

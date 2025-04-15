@@ -1,6 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { industryTrends, competitors } from "@/data/mockData";
+import { industryTrends } from "@/data/industryTrends";
+import { competitors } from "@/data/competitors";
 import { Progress } from "@/components/ui/progress";
 import { ArrowUpRight, ChevronRight, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";

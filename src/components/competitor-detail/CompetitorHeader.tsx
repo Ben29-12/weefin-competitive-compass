@@ -1,19 +1,15 @@
-
 import { Competitor } from "@/data/types";
 import { ExternalLink, Box, Users, Database, BarChart } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-
 interface CompetitorHeaderProps {
   competitor: Competitor;
 }
-
 export function CompetitorHeader({
   competitor
 }: CompetitorHeaderProps) {
   // Find people signals in recent activities
   const peopleSignals = competitor.recentActivity.filter(activity => activity.type === 'people_signals').sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  
   return <div className="flex justify-between items-start">
       <div>
         <div className="flex items-center gap-4 mb-2">
@@ -28,20 +24,13 @@ export function CompetitorHeader({
         </p>
         
         {peopleSignals.length > 0 && <div className="mt-4 space-y-2">
+            
             <div className="flex flex-wrap gap-2">
-              {peopleSignals.map(signal => (
-                <Badge key={signal.id} variant="outline" className="flex items-center gap-1 py-1">
-                  <Users className="h-3 w-3" />
-                  <span>{signal.title}</span>
-                </Badge>
-              ))}
+              {peopleSignals.map(signal => {})}
             </div>
           </div>}
         
-        {competitor.keyProducts && competitor.keyProducts.length > 0 && <div className="mt-3 flex items-center text-sm text-muted-foreground">
-            <span className="font-medium">Key Products:</span>
-            <span className="ml-2">{competitor.keyProducts.join(", ")}</span>
-          </div>}
+        {competitor.keyProducts && competitor.keyProducts.length > 0}
       </div>
       <a href={competitor.website} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline inline-flex items-center">
         Visit website

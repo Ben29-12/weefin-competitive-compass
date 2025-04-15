@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -6,17 +5,12 @@ import { ActivityBadge } from "@/components/ActivityBadge";
 import { ImpactBadge } from "@/components/ImpactBadge";
 import { ArrowUpRight } from "lucide-react";
 import { competitors } from "@/data/competitors";
+import { activityTypes } from "@/data/constants";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export const RecentActivities = () => {
   // Get all activity types for the filter options
-  const activityTypes = Array.from(
-    new Set(
-      competitors.flatMap(competitor => 
-        competitor.recentActivity.map(activity => activity.type)
-      )
-    )
-  );
+  const activityTypeValues = activityTypes.map(type => type.value);
 
   // Get latest activities across all competitors
   const allActivities = competitors
@@ -44,8 +38,8 @@ export const RecentActivities = () => {
           <TabsList className="mb-4 inline-flex w-auto">
             <TabsTrigger value="all">All</TabsTrigger>
             {activityTypes.map(type => (
-              <TabsTrigger key={type} value={type}>
-                {typeof type === 'string' ? type.charAt(0).toUpperCase() + type.slice(1) : ''}
+              <TabsTrigger key={type.value} value={type.value}>
+                {type.label}
               </TabsTrigger>
             ))}
           </TabsList>
@@ -81,10 +75,10 @@ export const RecentActivities = () => {
             </div>
           </TabsContent>
           
-          {activityTypes.map(type => (
-            <TabsContent key={typeof type === 'string' ? type : ''} value={typeof type === 'string' ? type : ''} className="space-y-5">
+          {activityTypeValues.map(typeValue => (
+            <TabsContent key={typeValue} value={typeValue} className="space-y-5">
               {allActivities
-                .filter(activity => activity.type === type)
+                .filter(activity => activity.type === typeValue)
                 .slice(0, 5)
                 .map(activity => (
                   <div key={activity.id} className="border-b pb-4 last:border-0">
@@ -108,7 +102,7 @@ export const RecentActivities = () => {
                     </div>
                   </div>
                 ))}
-              {allActivities.filter(activity => activity.type === type).length === 0 && (
+              {allActivities.filter(activity => activity.type === typeValue).length === 0 && (
                 <div className="text-center py-8 text-muted-foreground">
                   No activities found for this filter.
                 </div>

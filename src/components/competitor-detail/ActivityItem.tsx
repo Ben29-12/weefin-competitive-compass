@@ -63,7 +63,7 @@ export function ActivityItem({ activity }: ActivityItemProps) {
             className="inline-flex items-center text-xs text-muted-foreground hover:text-primary"
           >
             <Link2 className="h-3 w-3 mr-1" />
-            Source
+            Source <span className="ml-1 italic">'{getDataSource(activity.type)}'</span>
           </Link>
         )}
       </div>

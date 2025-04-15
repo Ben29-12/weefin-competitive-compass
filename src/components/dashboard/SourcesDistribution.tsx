@@ -77,7 +77,7 @@ export const SourcesDistribution = () => {
                 />
                 <span className="text-sm text-muted-foreground">{item.name}</span>
               </div>
-            )div>
+            ))}
           </div>
         </div>
       </CardContent>

@@ -1,3 +1,4 @@
+
 import { Competitor } from "@/data/types";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -36,30 +37,26 @@ export function ActivitiesSection({ competitor }: ActivitiesSectionProps) {
             </div>
           </ScrollArea>
           
-          <div className="min-h-[400px] max-h-[600px]">
-            <ScrollArea className="h-full">
-              <TabsContent value="all" className="space-y-4">
-                {competitor.recentActivity.map(activity => (
+          <TabsContent value="all" className="space-y-4">
+            {competitor.recentActivity.map(activity => (
+              <ActivityItem key={activity.id} activity={activity} />
+            ))}
+          </TabsContent>
+          
+          {activityTypes.map(type => (
+            <TabsContent key={type.value} value={type.value} className="space-y-4">
+              {competitor.recentActivity
+                .filter(activity => activity.type === type.value)
+                .map(activity => (
                   <ActivityItem key={activity.id} activity={activity} />
                 ))}
-              </TabsContent>
-              
-              {activityTypes.map(type => (
-                <TabsContent key={type.value} value={type.value} className="space-y-4">
-                  {competitor.recentActivity
-                    .filter(activity => activity.type === type.value)
-                    .map(activity => (
-                      <ActivityItem key={activity.id} activity={activity} />
-                    ))}
-                  {competitor.recentActivity.filter(activity => activity.type === type.value).length === 0 && (
-                    <div className="text-center py-6 text-muted-foreground">
-                      No {type.label} activities recorded.
-                    </div>
-                  )}
-                </TabsContent>
-              ))}
-            </ScrollArea>
-          </div>
+              {competitor.recentActivity.filter(activity => activity.type === type.value).length === 0 && (
+                <div className="text-center py-6 text-muted-foreground">
+                  No {type.label} activities recorded.
+                </div>
+              )}
+            </TabsContent>
+          ))}
         </Tabs>
       </CardContent>
     </Card>

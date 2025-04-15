@@ -1,8 +1,7 @@
-
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ArrowUpRight } from "lucide-react";
-import { competitors } from "@/data/mockData";
+import { competitors } from "@/data/competitors";
 
 export const CompetitorsOverview = () => {
   return (

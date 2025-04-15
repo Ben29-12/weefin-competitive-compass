@@ -1,6 +1,7 @@
 
 import { useState } from "react";
-import { competitors, activityTypes } from "@/data/mockData";
+import { competitors } from "@/data/competitors";
+import { activityTypes } from "@/data/constants";
 import { SearchAndFilter } from "@/components/competitors/SearchAndFilter";
 import { CompetitorsList } from "@/components/competitors/CompetitorsList";
 import { Badge } from "@/components/ui/badge";

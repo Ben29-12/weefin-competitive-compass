@@ -1,8 +1,8 @@
-
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ArrowUpRight } from "lucide-react";
-import { news, competitors } from "@/data/mockData";
+import { competitors } from "@/data/competitors";
+import { news } from "@/data/news";
 
 export const RecentNews = () => {
   return (

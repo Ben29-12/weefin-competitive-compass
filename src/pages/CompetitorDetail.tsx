@@ -1,6 +1,5 @@
-
 import { useParams } from "react-router-dom";
-import { competitors } from "@/data/mockData";
+import { competitors } from "@/data/competitors";
 import { CompetitorHeader } from "@/components/competitor-detail/CompetitorHeader";
 import { InfoCards } from "@/components/competitor-detail/InfoCards";
 import { ActivitiesSection } from "@/components/competitor-detail/ActivitiesSection";

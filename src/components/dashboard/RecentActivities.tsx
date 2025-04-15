@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ActivityBadge } from "@/components/ActivityBadge";
@@ -36,9 +35,9 @@ export const RecentActivities = () => {
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="all">
-          <ScrollArea className="w-full">
+          <ScrollArea className="w-full" orientation="horizontal">
             <div className="pb-4">
-              <TabsList className="flex w-max">
+              <TabsList className="flex w-max min-w-full">
                 <TabsTrigger value="all" className="px-3 py-1.5 text-sm">All</TabsTrigger>
                 {activityTypes.map(type => (
                   <TabsTrigger 

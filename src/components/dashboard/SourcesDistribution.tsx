@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { PieChart, Pie, Cell } from "recharts";
@@ -25,14 +26,14 @@ export const SourcesDistribution = () => {
       <CardContent className="flex flex-col items-center py-2">
         <div className="flex w-full gap-4">
           <div className="w-3/5">
-            <ChartContainer config={{}} className="w-full h-48">
+            <ChartContainer config={{}} className="w-full h-40">
               <PieChart>
                 <Pie
                   data={data}
                   cx="50%"
                   cy="50%"
-                  innerRadius={30}
-                  outerRadius={60}
+                  innerRadius={25}
+                  outerRadius={50}
                   paddingAngle={1}
                   dataKey="value"
                   nameKey="name"
@@ -68,16 +69,16 @@ export const SourcesDistribution = () => {
               </PieChart>
             </ChartContainer>
           </div>
-          <div className="w-2/5 flex flex-col gap-2">
+          <div className="w-2/5 flex flex-col gap-1">
             {data.map((item, index) => (
-              <div key={item.name} className="flex items-center gap-2">
+              <div key={item.name} className="flex items-center gap-1">
                 <div
-                  className="w-3 h-3 rounded-full"
+                  className="w-2 h-2 rounded-full"
                   style={{ backgroundColor: COLORS[index % COLORS.length] }}
                 />
                 <div className="flex flex-col">
-                  <span className="text-sm text-foreground">{item.name}</span>
-                  <span className="text-xs text-muted-foreground">{item.value}%</span>
+                  <span className="text-xs text-foreground">{item.name}</span>
+                  <span className="text-[0.6rem] text-muted-foreground">{item.value}%</span>
                 </div>
               </div>
             ))}

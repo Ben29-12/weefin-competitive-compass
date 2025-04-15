@@ -11,7 +11,14 @@ export default function Competitors() {
   const [searchTerm, setSearchTerm] = useState("");
   const [activityFilter, setActivityFilter] = useState<string | null>(null);
 
-  const filteredCompetitors = competitors
+  const sortedCompetitors = [...competitors].sort((a, b) => {
+    // Put Clarity AI first
+    if (a.name === "Clarity AI") return -1;
+    if (b.name === "Clarity AI") return 1;
+    return a.name.localeCompare(b.name);
+  });
+
+  const filteredCompetitors = sortedCompetitors
     .filter(competitor => 
       competitor.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       competitor.description.toLowerCase().includes(searchTerm.toLowerCase())

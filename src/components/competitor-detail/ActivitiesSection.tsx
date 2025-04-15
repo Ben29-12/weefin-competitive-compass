@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ActivityItem } from "./ActivityItem";
 import { activityTypes } from "@/data/constants";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 interface ActivitiesSectionProps {
   competitor: Competitor;
@@ -33,6 +33,7 @@ export function ActivitiesSection({ competitor }: ActivitiesSectionProps) {
                   </TabsTrigger>
                 ))}
               </TabsList>
+              <ScrollBar orientation="horizontal" />
             </div>
           </ScrollArea>
           

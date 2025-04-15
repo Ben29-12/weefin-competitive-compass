@@ -1,21 +1,17 @@
-
 import { Competitor } from "@/data/types";
 import { ExternalLink, Box, Users, Database, BarChart } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { ActivityBadge } from "@/components/ActivityBadge";
 import { ImpactBadge } from "@/components/ImpactBadge";
-
 interface CompetitorHeaderProps {
   competitor: Competitor;
 }
-
 export function CompetitorHeader({
   competitor
 }: CompetitorHeaderProps) {
   // Find people signals in recent activities
   const peopleSignals = competitor.recentActivity.filter(activity => activity.type === 'people_signals').sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  
   return <div className="flex justify-between items-start">
       <div>
         <div className="flex items-center gap-4 mb-2">
@@ -32,12 +28,7 @@ export function CompetitorHeader({
         {peopleSignals.length > 0 && <div className="mt-4 space-y-2">
             
             <div className="flex flex-wrap gap-2">
-              {peopleSignals.map(signal => (
-                <Badge key={signal.id} variant="secondary" className="flex items-center gap-1">
-                  <Users className="h-3 w-3" />
-                  {signal.title}
-                </Badge>
-              ))}
+              {peopleSignals.map(signal => {})}
             </div>
           </div>}
         

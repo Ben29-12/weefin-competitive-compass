@@ -33,37 +33,73 @@ export const clarityAiCompetitor: Competitor = {
       id: "clarity-prod-1",
       type: "product",
       title: "New ESG Analytics Dashboard",
-      description: "Launch of enhanced ESG Analytics Dashboard with real-time data visualization and customizable metrics.",
+      description: "Launch of enhanced ESG Analytics Dashboard with real-time data visualization.",
       date: "2025-03-20",
       impact: "high",
       source: "/sources/clarity-dashboard-launch"
     },
     {
+      id: "clarity-prod-2",
+      type: "product",
+      title: "Mobile App Release",
+      description: "Released new mobile application for ESG scoring on-the-go.",
+      date: "2025-04-05",
+      impact: "medium",
+      source: "/sources/clarity-mobile-app"
+    },
+    {
       id: "clarity-price-1",
       type: "pricing",
       title: "Enterprise Plan Restructuring",
-      description: "Introduction of new tiered pricing model for enterprise clients with expanded features.",
+      description: "Introduction of new tiered pricing model for enterprise clients.",
       date: "2025-01-15",
       impact: "medium",
       source: "/sources/clarity-pricing-update"
     },
     {
+      id: "clarity-price-2",
+      type: "pricing",
+      title: "SMB Package Launch",
+      description: "New affordable pricing tier for small and medium businesses.",
+      date: "2025-03-10",
+      impact: "high",
+      source: "/sources/clarity-smb-pricing"
+    },
+    {
       id: "clarity-part-1",
       type: "partnership",
       title: "Bloomberg Terminal Integration",
-      description: "Strategic partnership to integrate ESG data directly into Bloomberg Terminal.",
+      description: "Strategic partnership to integrate ESG data into Bloomberg Terminal.",
       date: "2025-03-01",
       impact: "high",
       source: "/sources/clarity-bloomberg-partnership"
     },
     {
+      id: "clarity-part-2",
+      type: "partnership",
+      title: "Microsoft Azure Partnership",
+      description: "New cloud partnership for enhanced data processing capabilities.",
+      date: "2025-04-12",
+      impact: "medium",
+      source: "/sources/clarity-azure-partnership"
+    },
+    {
       id: "clarity-client-1",
       type: "client",
       title: "Major Bank Implementation",
-      description: "Global investment bank implements Clarity AI's ESG risk assessment solution across their portfolio.",
+      description: "Global investment bank implements Clarity AI's ESG risk assessment solution.",
       date: "2025-02-28",
       impact: "high",
       source: "/sources/clarity-bank-implementation"
+    },
+    {
+      id: "clarity-client-2",
+      type: "client",
+      title: "Asset Manager Onboarding",
+      description: "Leading European asset manager adopts full ESG analytics suite.",
+      date: "2025-04-08",
+      impact: "high",
+      source: "/sources/clarity-am-implementation"
     },
     {
       id: "clarity-tech-1",
@@ -75,13 +111,31 @@ export const clarityAiCompetitor: Competitor = {
       source: "/sources/clarity-ai-enhancement"
     },
     {
+      id: "clarity-tech-2",
+      type: "technologies",
+      title: "Real-time Data Processing",
+      description: "Implementation of new real-time data processing infrastructure.",
+      date: "2025-03-25",
+      impact: "high",
+      source: "/sources/clarity-realtime-tech"
+    },
+    {
       id: "clarity-mkt-1",
       type: "marketing",
       title: "ESG Investment Summit",
-      description: "Hosting virtual summit on the future of ESG investing with industry leaders.",
+      description: "Hosting virtual summit on the future of ESG investing.",
       date: "2025-05-01",
       impact: "medium",
       source: "/sources/clarity-summit-2025"
+    },
+    {
+      id: "clarity-mkt-2",
+      type: "marketing",
+      title: "Global Brand Campaign",
+      description: "Launch of new global brand awareness campaign focusing on sustainability.",
+      date: "2025-04-15",
+      impact: "high",
+      source: "/sources/clarity-brand-campaign"
     }
   ]
 };

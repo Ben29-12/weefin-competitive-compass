@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ActivityItem } from "./ActivityItem";
 import { activityTypes } from "@/data/constants";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface ActivitiesSectionProps {
   competitor: Competitor;
@@ -18,14 +19,22 @@ export function ActivitiesSection({ competitor }: ActivitiesSectionProps) {
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="all">
-          <TabsList className="mb-4 inline-flex w-auto">
-            <TabsTrigger value="all">All</TabsTrigger>
-            {activityTypes.map(type => (
-              <TabsTrigger key={type.value} value={type.value}>
-                {type.label}
-              </TabsTrigger>
-            ))}
-          </TabsList>
+          <ScrollArea className="w-full">
+            <div className="pb-4">
+              <TabsList className="flex w-max">
+                <TabsTrigger value="all" className="px-3 py-1.5 text-sm">All</TabsTrigger>
+                {activityTypes.map(type => (
+                  <TabsTrigger 
+                    key={type.value} 
+                    value={type.value}
+                    className="px-3 py-1.5 text-sm whitespace-nowrap"
+                  >
+                    {type.label}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
+          </ScrollArea>
           
           <TabsContent value="all" className="space-y-4">
             {competitor.recentActivity.map(activity => (

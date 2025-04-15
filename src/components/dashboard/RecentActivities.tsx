@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ActivityBadge } from "@/components/ActivityBadge";
@@ -7,6 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 import { competitors } from "@/data/competitors";
 import { activityTypes } from "@/data/constants";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export const RecentActivities = () => {
   // Get all activity types for the filter options
@@ -35,14 +36,22 @@ export const RecentActivities = () => {
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="all">
-          <TabsList className="mb-4 inline-flex w-auto">
-            <TabsTrigger value="all">All</TabsTrigger>
-            {activityTypes.map(type => (
-              <TabsTrigger key={type.value} value={type.value}>
-                {type.label}
-              </TabsTrigger>
-            ))}
-          </TabsList>
+          <ScrollArea className="w-full">
+            <div className="pb-4">
+              <TabsList className="flex w-max">
+                <TabsTrigger value="all" className="px-3 py-1.5 text-sm">All</TabsTrigger>
+                {activityTypes.map(type => (
+                  <TabsTrigger 
+                    key={type.value} 
+                    value={type.value}
+                    className="px-3 py-1.5 text-sm whitespace-nowrap"
+                  >
+                    {type.label}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
+          </ScrollArea>
           
           <TabsContent value="all" className="space-y-5">
             {allActivities.slice(0, 5).map((activity) => (

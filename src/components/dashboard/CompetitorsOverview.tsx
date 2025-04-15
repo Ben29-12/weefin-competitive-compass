@@ -1,7 +1,9 @@
+
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ArrowUpRight } from "lucide-react";
 import { competitors } from "@/data/competitors";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 export const CompetitorsOverview = () => {
   return (
@@ -17,9 +19,10 @@ export const CompetitorsOverview = () => {
           {competitors.map((competitor) => (
             <div key={competitor.id} className="border rounded-lg p-4 hover:shadow-md transition-shadow">
               <div className="flex items-center space-x-4 mb-4">
-                <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
-                  <span className="text-lg font-bold">{competitor.name.charAt(0)}</span>
-                </div>
+                <Avatar className="w-10 h-10">
+                  <AvatarImage src={competitor.logo} alt={`${competitor.name} logo`} />
+                  <AvatarFallback>{competitor.name.charAt(0)}</AvatarFallback>
+                </Avatar>
                 <div>
                   <div className="font-medium">{competitor.name}</div>
                   <div className="text-sm text-muted-foreground">

@@ -1,3 +1,4 @@
+
 import { ActivityType, ImpactColors } from './types';
 
 export const activityTypes: ActivityType[] = [
@@ -9,7 +10,7 @@ export const activityTypes: ActivityType[] = [
   { value: 'client', label: 'Clients', color: 'bg-teal-100 text-teal-800' },
   { value: 'social_mentions', label: 'Social Mentions', color: 'bg-indigo-100 text-indigo-800' },
   { value: 'technologies', label: 'Technologies', color: 'bg-pink-100 text-pink-800' },
-  { value: 'marketing', label: 'Marketing Activities', color: 'bg-violet-100 text-violet-800' }
+  { value: 'marketing', label: 'Marketing', color: 'bg-violet-100 text-violet-800' }
 ];
 
 export const impactColors: ImpactColors = {

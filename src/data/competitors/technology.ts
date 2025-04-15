@@ -1,3 +1,4 @@
+
 import { Competitor } from '../types';
 
 export const technologyCompetitors: Competitor[] = [
@@ -38,6 +39,33 @@ export const technologyCompetitors: Competitor[] = [
         date: "2024-01-25",
         impact: "low",
         source: "/sources/rimes-sfdr-webinar"
+      },
+      {
+        id: "rimes-4",
+        type: "technologies",
+        title: "Blockchain Integration",
+        description: "Implementation of blockchain for ESG data verification.",
+        date: "2024-03-10",
+        impact: "high",
+        source: "/sources/rimes-blockchain"
+      },
+      {
+        id: "rimes-5",
+        type: "marketing",
+        title: "ESG Data Excellence Campaign",
+        description: "Launch of global marketing campaign focusing on data quality.",
+        date: "2024-02-15",
+        impact: "medium",
+        source: "/sources/rimes-campaign"
+      },
+      {
+        id: "rimes-6",
+        type: "client",
+        title: "Major Asset Manager Onboarding",
+        description: "Strategic partnership with top 10 global asset manager.",
+        date: "2024-01-30",
+        impact: "high",
+        source: "/sources/rimes-client"
       }
     ]
   },
@@ -78,6 +106,33 @@ export const technologyCompetitors: Competitor[] = [
         date: "2024-01-10",
         impact: "medium",
         source: "/sources/clarity-vp-engineering"
+      },
+      {
+        id: "clarity-4",
+        type: "partnership",
+        title: "Academic Research Partnership",
+        description: "Collaboration with leading universities on ESG impact measurement.",
+        date: "2024-03-15",
+        impact: "medium",
+        source: "/sources/clarity-academic"
+      },
+      {
+        id: "clarity-5",
+        type: "social_mentions",
+        title: "Sustainability Tech Awards",
+        description: "Won 'Best ESG Technology Solution' at industry awards.",
+        date: "2024-02-20",
+        impact: "high",
+        source: "/sources/clarity-award"
+      },
+      {
+        id: "clarity-6",
+        type: "pricing",
+        title: "SME-focused Pricing Model",
+        description: "Launch of affordable pricing tier for small businesses.",
+        date: "2024-01-25",
+        impact: "medium",
+        source: "/sources/clarity-pricing"
       }
     ]
   }

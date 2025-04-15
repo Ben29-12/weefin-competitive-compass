@@ -1,3 +1,4 @@
+
 import { Competitor } from '../types';
 
 export const financialCompetitors: Competitor[] = [
@@ -38,6 +39,33 @@ export const financialCompetitors: Competitor[] = [
         date: "2024-01-22",
         impact: "medium",
         source: "/sources/jpm-cdo-recruitment"
+      },
+      {
+        id: "jpm-4",
+        type: "technologies",
+        title: "Quantum Computing Research",
+        description: "Investment in quantum computing for ESG risk analysis.",
+        date: "2024-03-01",
+        impact: "high",
+        source: "/sources/jpm-quantum"
+      },
+      {
+        id: "jpm-5",
+        type: "marketing",
+        title: "ESG Innovation Summit",
+        description: "Hosted global summit on ESG innovation in finance.",
+        date: "2024-02-15",
+        impact: "medium",
+        source: "/sources/jpm-summit"
+      },
+      {
+        id: "jpm-6",
+        type: "social_mentions",
+        title: "Sustainable Finance Leadership",
+        description: "Featured in Fortune's list of sustainable finance leaders.",
+        date: "2024-01-30",
+        impact: "high",
+        source: "/sources/jpm-fortune"
       }
     ]
   },
@@ -78,6 +106,33 @@ export const financialCompetitors: Competitor[] = [
         date: "2024-01-05",
         impact: "medium",
         source: "/sources/bloomberg-esg-client"
+      },
+      {
+        id: "bloomberg-4",
+        type: "technologies",
+        title: "Natural Language Processing Update",
+        description: "Enhanced NLP capabilities for ESG news analysis.",
+        date: "2024-03-10",
+        impact: "medium",
+        source: "/sources/bloomberg-nlp"
+      },
+      {
+        id: "bloomberg-5",
+        type: "partnership",
+        title: "Sustainable Finance Initiative",
+        description: "Partnership with World Bank on sustainable finance metrics.",
+        date: "2024-02-20",
+        impact: "high",
+        source: "/sources/bloomberg-worldbank"
+      },
+      {
+        id: "bloomberg-6",
+        type: "product",
+        title: "ESG Scoring 2.0 Launch",
+        description: "Release of enhanced ESG scoring methodology.",
+        date: "2024-01-25",
+        impact: "high",
+        source: "/sources/bloomberg-scoring"
       }
     ]
   }

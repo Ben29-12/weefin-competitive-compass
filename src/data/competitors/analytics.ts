@@ -1,3 +1,4 @@
+
 import { Competitor } from '../types';
 
 export const analyticsCompetitors: Competitor[] = [
@@ -38,6 +39,33 @@ export const analyticsCompetitors: Competitor[] = [
         date: "2024-01-30",
         impact: "medium",
         source: "/sources/sp-partnership"
+      },
+      {
+        id: "sp-4",
+        type: "marketing",
+        title: "Global ESG Conference Sponsorship",
+        description: "Major sponsor of the 2024 Global ESG Investment Summit.",
+        date: "2024-03-15",
+        impact: "high",
+        source: "/sources/sp-conference"
+      },
+      {
+        id: "sp-5",
+        type: "technologies",
+        title: "AI Integration in ESG Scoring",
+        description: "Implementation of machine learning for more accurate ESG assessments.",
+        date: "2024-02-28",
+        impact: "high",
+        source: "/sources/sp-ai-integration"
+      },
+      {
+        id: "sp-6",
+        type: "pricing",
+        title: "New Tiered Pricing Model",
+        description: "Introduction of flexible pricing options for different market segments.",
+        date: "2024-03-01",
+        impact: "medium",
+        source: "/sources/sp-pricing"
       }
     ]
   },
@@ -78,6 +106,33 @@ export const analyticsCompetitors: Competitor[] = [
         date: "2024-01-15",
         impact: "high",
         source: "/sources/factset-esg-client"
+      },
+      {
+        id: "factset-4",
+        type: "marketing",
+        title: "ESG Integration Webinar Series",
+        description: "Launch of educational webinar series for investment professionals.",
+        date: "2024-03-05",
+        impact: "medium",
+        source: "/sources/factset-webinar"
+      },
+      {
+        id: "factset-5",
+        type: "technologies",
+        title: "Cloud Infrastructure Upgrade",
+        description: "Major enhancement of cloud-based data processing capabilities.",
+        date: "2024-02-10",
+        impact: "high",
+        source: "/sources/factset-cloud"
+      },
+      {
+        id: "factset-6",
+        type: "acquisition",
+        title: "Acquisition of ESG Data Provider",
+        description: "Strategic acquisition to enhance ESG data coverage.",
+        date: "2024-01-20",
+        impact: "high",
+        source: "/sources/factset-acquisition"
       }
     ]
   }

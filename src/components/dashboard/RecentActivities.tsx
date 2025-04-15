@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ActivityBadge } from "@/components/ActivityBadge";
@@ -79,54 +78,10 @@ export const RecentActivities = () => {
             </ScrollArea>
           </div>
           
-          <TabsContent value="all" className="space-y-5">
-            {allActivities.slice(0, 5).map((activity) => (
-              <div key={activity.id} className="border-b pb-4 last:border-0">
-                <div className="flex items-start justify-between mb-1">
-                  <div className="font-medium">{activity.title}</div>
-                  <div className="text-sm text-muted-foreground">
-                    {new Date(activity.date).toLocaleDateString('en-US')}
-                  </div>
-                </div>
-                <div className="text-sm text-muted-foreground mb-2">
-                  {activity.description}
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="text-sm font-medium text-primary">
-                    {activity.competitorName}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="flex space-x-2">
-                      <ActivityBadge type={activity.type} />
-                      {activity.impact && <ImpactBadge impact={activity.impact} />}
-                    </div>
-                    {activity.source && (
-                      <Link 
-                        to={activity.source} 
-                        className="inline-flex items-center text-xs text-muted-foreground hover:text-primary ml-2"
-                      >
-                        <Link2 className="h-3 w-3 mr-1" />
-                        Source <span className="ml-1 italic">'{getDataSource(activity.type)}'</span>
-                      </Link>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-            <div className="text-right">
-              <Link to="/competitors" className="inline-flex items-center text-sm font-medium text-primary hover:underline">
-                View all activities
-                <ArrowUpRight className="ml-1 h-4 w-4" />
-              </Link>
-            </div>
-          </TabsContent>
-          
-          {activityTypeValues.map(typeValue => (
-            <TabsContent key={typeValue} value={typeValue} className="space-y-5">
-              {allActivities
-                .filter(activity => activity.type === typeValue)
-                .slice(0, 5)
-                .map(activity => (
+          <div className="min-h-[400px] max-h-[600px]">
+            <ScrollArea className="h-full">
+              <TabsContent value="all" className="space-y-5 m-0">
+                {allActivities.slice(0, 5).map((activity) => (
                   <div key={activity.id} className="border-b pb-4 last:border-0">
                     <div className="flex items-start justify-between mb-1">
                       <div className="font-medium">{activity.title}</div>
@@ -159,22 +114,69 @@ export const RecentActivities = () => {
                     </div>
                   </div>
                 ))}
-              {allActivities.filter(activity => activity.type === typeValue).length === 0 && (
-                <div className="text-center py-8 text-muted-foreground">
-                  No activities found for this filter.
+                <div className="text-right">
+                  <Link to="/competitors" className="inline-flex items-center text-sm font-medium text-primary hover:underline">
+                    View all activities
+                    <ArrowUpRight className="ml-1 h-4 w-4" />
+                  </Link>
                 </div>
-              )}
-              <div className="text-right">
-                <Link to="/competitors" className="inline-flex items-center text-sm font-medium text-primary hover:underline">
-                  View all activities
-                  <ArrowUpRight className="ml-1 h-4 w-4" />
-                </Link>
-              </div>
-            </TabsContent>
-          ))}
+              </TabsContent>
+              
+              {activityTypeValues.map(typeValue => (
+                <TabsContent key={typeValue} value={typeValue} className="space-y-5 m-0">
+                  {allActivities
+                    .filter(activity => activity.type === typeValue)
+                    .slice(0, 5)
+                    .map(activity => (
+                      <div key={activity.id} className="border-b pb-4 last:border-0">
+                        <div className="flex items-start justify-between mb-1">
+                          <div className="font-medium">{activity.title}</div>
+                          <div className="text-sm text-muted-foreground">
+                            {new Date(activity.date).toLocaleDateString('en-US')}
+                          </div>
+                        </div>
+                        <div className="text-sm text-muted-foreground mb-2">
+                          {activity.description}
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <div className="text-sm font-medium text-primary">
+                            {activity.competitorName}
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <div className="flex space-x-2">
+                              <ActivityBadge type={activity.type} />
+                              {activity.impact && <ImpactBadge impact={activity.impact} />}
+                            </div>
+                            {activity.source && (
+                              <Link 
+                                to={activity.source} 
+                                className="inline-flex items-center text-xs text-muted-foreground hover:text-primary ml-2"
+                              >
+                                <Link2 className="h-3 w-3 mr-1" />
+                                Source <span className="ml-1 italic">'{getDataSource(activity.type)}'</span>
+                              </Link>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  {allActivities.filter(activity => activity.type === typeValue).length === 0 && (
+                    <div className="text-center py-8 text-muted-foreground">
+                      No activities found for this filter.
+                    </div>
+                  )}
+                  <div className="text-right">
+                    <Link to="/competitors" className="inline-flex items-center text-sm font-medium text-primary hover:underline">
+                      View all activities
+                      <ArrowUpRight className="ml-1 h-4 w-4" />
+                    </Link>
+                  </div>
+                </TabsContent>
+              ))}
+            </ScrollArea>
+          </div>
         </Tabs>
       </CardContent>
     </Card>
   );
 };
-

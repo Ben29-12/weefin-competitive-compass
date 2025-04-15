@@ -1,8 +1,6 @@
-
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { PieChart, Pie, Cell } from "recharts";
-import { Globe, Newspaper, Database, GlassWater, FileText, Linkedin } from "lucide-react";
 
 const data = [
   { name: "ESG Media", value: 25, sources: ["ESG Investor", "ESG Today", "Net Zero Investor", "KnowESG"] },
@@ -25,57 +23,62 @@ export const SourcesDistribution = () => {
         </CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col items-center py-2">
-        <div className="w-full">
-          <ChartContainer config={{}} className="w-full h-48">
-            <PieChart>
-              <Pie
-                data={data}
-                cx="50%"
-                cy="50%"
-                innerRadius={30}
-                outerRadius={60}
-                paddingAngle={1}
-                dataKey="value"
-                nameKey="name"
-              >
-                {data.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                ))}
-              </Pie>
-              <ChartTooltip
-                content={({ active, payload }) => {
-                  if (active && payload && payload.length) {
-                    const data = payload[0].payload;
-                    return (
-                      <ChartTooltipContent
-                        active={active}
-                        payload={payload}
-                        label={data.name}
-                        className="bg-white p-2 rounded-lg shadow-lg border"
-                      >
-                        <div className="p-2">
-                          <p className="font-medium">{data.name}</p>
-                          <p className="text-sm text-muted-foreground">{data.value}% of sources</p>
-                          <div className="mt-1 text-xs text-muted-foreground">
-                            {data.sources.join(", ")}
+        <div className="flex w-full gap-4">
+          <div className="w-3/5">
+            <ChartContainer config={{}} className="w-full h-48">
+              <PieChart>
+                <Pie
+                  data={data}
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={30}
+                  outerRadius={60}
+                  paddingAngle={1}
+                  dataKey="value"
+                  nameKey="name"
+                >
+                  {data.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  ))}
+                </Pie>
+                <ChartTooltip
+                  content={({ active, payload }) => {
+                    if (active && payload && payload.length) {
+                      const data = payload[0].payload;
+                      return (
+                        <ChartTooltipContent
+                          active={active}
+                          payload={payload}
+                          label={data.name}
+                          className="bg-white p-2 rounded-lg shadow-lg border"
+                        >
+                          <div className="p-2">
+                            <p className="font-medium">{data.name}</p>
+                            <p className="text-sm text-muted-foreground">{data.value}% of sources</p>
+                            <div className="mt-1 text-xs text-muted-foreground">
+                              {data.sources.join(", ")}
+                            </div>
                           </div>
-                        </div>
-                      </ChartTooltipContent>
-                    );
-                  }
-                  return null;
-                }}
-              />
-            </PieChart>
-          </ChartContainer>
-          <div className="mt-1 grid grid-cols-2 md:grid-cols-3 gap-1">
+                        </ChartTooltipContent>
+                      );
+                    }
+                    return null;
+                  }}
+                />
+              </PieChart>
+            </ChartContainer>
+          </div>
+          <div className="w-2/5 flex flex-col gap-2">
             {data.map((item, index) => (
-              <div key={item.name} className="flex items-center gap-1">
+              <div key={item.name} className="flex items-center gap-2">
                 <div
-                  className="w-2 h-2 rounded-full"
+                  className="w-3 h-3 rounded-full"
                   style={{ backgroundColor: COLORS[index % COLORS.length] }}
                 />
-                <span className="text-[10px] text-muted-foreground">{item.name}</span>
+                <div className="flex flex-col">
+                  <span className="text-sm text-foreground">{item.name}</span>
+                  <span className="text-xs text-muted-foreground">{item.value}%</span>
+                </div>
               </div>
             ))}
           </div>

@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { PieChart, Pie, Cell } from "recharts";
@@ -23,17 +24,17 @@ export const SourcesDistribution = () => {
           Breakdown of information sources used in competitor analysis
         </CardDescription>
       </CardHeader>
-      <CardContent className="flex flex-col items-center">
+      <CardContent className="flex flex-col items-center py-2">
         <div className="w-full">
-          <ChartContainer config={{}} className="w-full">
+          <ChartContainer config={{}} className="w-full h-48">
             <PieChart>
               <Pie
                 data={data}
                 cx="50%"
                 cy="50%"
-                innerRadius={40}
-                outerRadius={80}
-                paddingAngle={2}
+                innerRadius={30}
+                outerRadius={60}
+                paddingAngle={1}
                 dataKey="value"
                 nameKey="name"
               >
@@ -67,14 +68,14 @@ export const SourcesDistribution = () => {
               />
             </PieChart>
           </ChartContainer>
-          <div className="mt-2 grid grid-cols-2 md:grid-cols-3 gap-2">
+          <div className="mt-1 grid grid-cols-2 md:grid-cols-3 gap-1">
             {data.map((item, index) => (
-              <div key={item.name} className="flex items-center gap-2">
+              <div key={item.name} className="flex items-center gap-1">
                 <div
-                  className="w-3 h-3 rounded-full"
+                  className="w-2 h-2 rounded-full"
                   style={{ backgroundColor: COLORS[index % COLORS.length] }}
                 />
-                <span className="text-xs text-muted-foreground">{item.name}</span>
+                <span className="text-[10px] text-muted-foreground">{item.name}</span>
               </div>
             ))}
           </div>

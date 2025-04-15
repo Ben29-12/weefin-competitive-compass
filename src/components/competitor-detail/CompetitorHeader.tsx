@@ -1,4 +1,3 @@
-
 import { Competitor } from "@/data/types";
 import { ExternalLink, Box, Users, Database, BarChart } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -29,12 +28,7 @@ export function CompetitorHeader({
         {peopleSignals.length > 0 && <div className="mt-4 space-y-2">
             
             <div className="flex flex-wrap gap-2">
-              {peopleSignals.map(signal => (
-                <Badge key={signal.id} variant="secondary" className="text-xs flex items-center gap-1">
-                  <Users className="h-3 w-3" />
-                  {signal.title}
-                </Badge>
-              ))}
+              {peopleSignals.map(signal => {})}
             </div>
           </div>}
         

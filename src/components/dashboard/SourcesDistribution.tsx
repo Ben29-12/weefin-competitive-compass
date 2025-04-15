@@ -17,16 +17,16 @@ const COLORS = ['#8B5CF6', '#D946EF', '#F97316', '#0EA5E9', '#10B981', '#6366F1'
 
 export const SourcesDistribution = () => {
   return (
-    <Card>
+    <Card className="w-full">
       <CardHeader>
         <CardTitle>Data Sources Distribution</CardTitle>
         <CardDescription>
           Breakdown of information sources used in competitor analysis
         </CardDescription>
       </CardHeader>
-      <CardContent>
-        <div className="h-[300px] w-full">
-          <ChartContainer config={{}} className="h-full">
+      <CardContent className="flex flex-col items-center">
+        <div className="w-full">
+          <ChartContainer config={{}} className="w-full">
             <PieChart>
               <Pie
                 data={data}

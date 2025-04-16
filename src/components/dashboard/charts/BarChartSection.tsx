@@ -56,15 +56,16 @@ export const BarChartSection = ({ data, colors }: BarChartSectionProps) => {
                 return null;
               }}
             />
-            <Bar 
-              dataKey="value" 
-              fill="#8884d8"
-              radius={[4, 4, 0, 0]}
-            >
-              {data.map((entry, index) => (
-                <Bar key={`bar-${index}`} dataKey="value" fill={colors[index % colors.length]} />
-              ))}
-            </Bar>
+            {data.map((entry, index) => (
+              <Bar 
+                key={entry.name}
+                dataKey="value" 
+                stackId="a"
+                fill={colors[index % colors.length]} 
+                radius={[4, 4, 0, 0]}
+                data={[entry]}
+              />
+            ))}
           </BarChart>
         </ResponsiveContainer>
       </ChartContainer>

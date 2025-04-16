@@ -19,24 +19,22 @@ export const BarChartSection = ({ data, colors }: BarChartSectionProps) => {
           <BarChart
             data={data}
             margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
-            layout="vertical"
           >
             <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} />
             <XAxis 
-              type="number"
-              label={{ 
-                value: 'Percentage (%)', 
-                position: 'insideBottom', 
-                offset: -10,
-                style: { textAnchor: 'middle' } 
-              }}
-              tick={{ fontSize: 12 }}
+              dataKey="name"
+              tick={{ fontSize: 12, angle: -45, textAnchor: 'end' }}
+              height={80}
             />
             <YAxis 
-              type="category"
-              dataKey="name"
-              width={150}
               tick={{ fontSize: 12 }}
+              label={{ 
+                value: 'Percentage (%)', 
+                position: 'insideLeft', 
+                angle: -90,
+                style: { textAnchor: 'middle' },
+                offset: 0
+              }}
             />
             <ChartTooltip
               content={({ active, payload }) => {
@@ -69,8 +67,7 @@ export const BarChartSection = ({ data, colors }: BarChartSectionProps) => {
                 key={entry.name}
                 dataKey="value" 
                 fill={colors[index % colors.length]} 
-                radius={[0, 4, 4, 0]}
-                data={[entry]}
+                radius={[4, 4, 0, 0]}
               />
             ))}
           </BarChart>

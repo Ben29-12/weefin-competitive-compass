@@ -6,30 +6,36 @@ interface BarChartSectionProps {
   data: Array<{
     name: string;
     value: number;
-    sources: string[];
+    category?: string;
   }>;
   colors: string[];
 }
 
 export const BarChartSection = ({ data, colors }: BarChartSectionProps) => {
   return (
-    <div className="w-full h-64">
+    <div className="w-full h-[400px]">
       <ChartContainer config={{}} className="w-full h-full">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={data}
-            margin={{ top: 20, right: 30, left: 20, bottom: 40 }}
+            margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
+            layout="vertical"
           >
-            <CartesianGrid strokeDasharray="3 3" />
+            <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} />
             <XAxis 
-              dataKey="name" 
-              angle={-45} 
-              textAnchor="end" 
-              height={70}
-              tick={{ fontSize: 12 }} 
+              type="number"
+              label={{ 
+                value: 'Percentage (%)', 
+                position: 'insideBottom', 
+                offset: -10,
+                style: { textAnchor: 'middle' } 
+              }}
+              tick={{ fontSize: 12 }}
             />
             <YAxis 
-              label={{ value: 'Percentage (%)', angle: -90, position: 'insideLeft', style: { textAnchor: 'middle' } }}
+              type="category"
+              dataKey="name"
+              width={150}
               tick={{ fontSize: 12 }}
             />
             <ChartTooltip
@@ -46,9 +52,11 @@ export const BarChartSection = ({ data, colors }: BarChartSectionProps) => {
                       <div className="p-2">
                         <p className="font-medium">{data.name}</p>
                         <p className="text-sm text-muted-foreground">{data.value}% of sources</p>
-                        <div className="mt-1 text-xs text-muted-foreground">
-                          {data.sources.join(", ")}
-                        </div>
+                        {data.category && (
+                          <p className="text-xs text-muted-foreground mt-1">
+                            Category: {data.category}
+                          </p>
+                        )}
                       </div>
                     </ChartTooltipContent>
                   );
@@ -60,9 +68,8 @@ export const BarChartSection = ({ data, colors }: BarChartSectionProps) => {
               <Bar 
                 key={entry.name}
                 dataKey="value" 
-                stackId="a"
                 fill={colors[index % colors.length]} 
-                radius={[4, 4, 0, 0]}
+                radius={[0, 4, 4, 0]}
                 data={[entry]}
               />
             ))}

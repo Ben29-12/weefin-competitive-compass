@@ -1,36 +1,5 @@
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { BarChartSection } from "./charts/BarChartSection";
-
-// Original grouped data
-const groupedData = [
-  { name: "ESG Media", value: 25, sources: ["ESG Investor", "ESG Today", "Net Zero Investor", "KnowESG"] },
-  { name: "Financial Press", value: 20, sources: ["Financial Times", "Investment Week", "Responsible Investor"] },
-  { name: "Professional Data", value: 15, sources: ["Pitchbook", "Crunchbase"] },
-  { name: "Industry Organizations", value: 15, sources: ["UKSIF", "Innovate Finance", "The Investment Association"] },
-  { name: "Company Sources", value: 15, sources: ["Company Websites", "Company Social Media"] },
-  { name: "LinkedIn", value: 10, sources: ["LinkedIn Company Pages", "LinkedIn Posts"] }
-];
-
-// Flatten the data to show individual sources
-const flattenedData = groupedData.flatMap(group => 
-  group.sources.map(source => {
-    // Distribute the group's value evenly among its sources
-    const sourceValue = Math.round(group.value / group.sources.length);
-    return {
-      name: source,
-      value: sourceValue,
-      category: group.name
-    };
-  })
-);
-
-// Sort the data by value in descending order
-const data = flattenedData.sort((a, b) => b.value - a.value);
-
-const COLORS = ['#8B5CF6', '#D946EF', '#F97316', '#0EA5E9', '#10B981', '#6366F1', 
-                '#EC4899', '#F59E0B', '#14B8A6', '#8B5CF6', '#D946EF', '#F97316', 
-                '#0EA5E9', '#10B981', '#6366F1', '#EC4899', '#F59E0B'];
 
 export const SourcesDistribution = () => {
   return (
@@ -42,7 +11,17 @@ export const SourcesDistribution = () => {
         </CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col items-center py-2">
-        <BarChartSection data={data} colors={COLORS} />
+        <div className="w-full flex justify-center">
+          <img 
+            src="/lovable-uploads/3610223b-33ab-4e49-8d4b-13d78ba366c2.png" 
+            alt="Data Sources Distribution Chart"
+            className="max-w-full h-auto"
+            style={{ maxHeight: "400px" }}
+          />
+        </div>
+        <div className="mt-4 text-sm text-muted-foreground text-center">
+          Distribution of signals by data source type
+        </div>
       </CardContent>
     </Card>
   );

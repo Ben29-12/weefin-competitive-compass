@@ -1,4 +1,3 @@
-
 import { Competitor } from '../types';
 
 export const clarityAiCompetitor: Competitor = {
@@ -6,7 +5,7 @@ export const clarityAiCompetitor: Competitor = {
   name: "Clarity AI",
   logo: "/lovable-uploads/a340d1eb-a93c-42cc-8935-3891aa7c9ee0.png",
   description: "Specialized in ESG data solutions with advanced AI capabilities for sustainability measurement.",
-  website: "https://example.com/clarity-ai",
+  website: "https://clarity.ai/",
   founded: 2017,
   headquartersLocation: "Madrid, Spain & New York, USA",
   employeeCount: "100-500",
@@ -17,7 +16,7 @@ export const clarityAiCompetitor: Competitor = {
       type: "people_signals",
       title: "Sales Team Expansion",
       description: "Clarity AI is recruiting: 1 AE (France), 3 Senior AE (Spain), 1 Associate AE (UK).",
-      date: "2025-02",  // Changed to month/year format
+      date: "2025-02",
       impact: "medium",
       source: "/sources/clarity-sales-expansion"
     },
@@ -26,7 +25,7 @@ export const clarityAiCompetitor: Competitor = {
       type: "people_signals",
       title: "Data Team Expansion",
       description: "Clarity AI is recruiting 6 people in Data (data science, data research, etc.).",
-      date: "2025-04",  // Changed to month/year format
+      date: "2025-04",
       impact: "high",
       source: "/sources/clarity-data-expansion"
     },

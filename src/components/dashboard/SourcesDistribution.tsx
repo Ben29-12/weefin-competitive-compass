@@ -1,7 +1,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { PieChartSection } from "./charts/PieChartSection";
-import { ChartLegend } from "./charts/ChartLegend";
+import { BarChartSection } from "./charts/BarChartSection";
 
 const data = [
   { name: "ESG Media", value: 25, sources: ["ESG Investor", "ESG Today", "Net Zero Investor", "KnowESG"] },
@@ -24,10 +23,7 @@ export const SourcesDistribution = () => {
         </CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col items-center py-2">
-        <div className="flex w-full gap-4">
-          <PieChartSection data={data} colors={COLORS} />
-          <ChartLegend data={data} colors={COLORS} />
-        </div>
+        <BarChartSection data={data} colors={COLORS} />
       </CardContent>
     </Card>
   );

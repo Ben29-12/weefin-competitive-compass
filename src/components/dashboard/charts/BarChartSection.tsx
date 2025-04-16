@@ -23,7 +23,7 @@ export const BarChartSection = ({ data, colors }: BarChartSectionProps) => {
             <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} />
             <XAxis 
               dataKey="name"
-              tick={{ fontSize: 12, angle: -45, textAnchor: 'end' }}
+              tick={{ fontSize: 12, textAnchor: 'end', transform: "rotate(-45)" }}
               height={80}
             />
             <YAxis 
@@ -62,14 +62,11 @@ export const BarChartSection = ({ data, colors }: BarChartSectionProps) => {
                 return null;
               }}
             />
-            {data.map((entry, index) => (
-              <Bar 
-                key={entry.name}
-                dataKey="value" 
-                fill={colors[index % colors.length]} 
-                radius={[4, 4, 0, 0]}
-              />
-            ))}
+            <Bar 
+              dataKey="value" 
+              fill={colors[0]} 
+              radius={[4, 4, 0, 0]}
+            />
           </BarChart>
         </ResponsiveContainer>
       </ChartContainer>
